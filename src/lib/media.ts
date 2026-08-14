@@ -20,7 +20,9 @@ export async function signedUrl(path: string, seconds = 60 * 60 * 8) {
 }
 
 export function dataUrlToBlob(dataUrl: string) {
-  const [head, b64] = dataUrl.split(",");
+  const parts = dataUrl.split(",");
+  const head = parts[0] ?? "";
+  const b64 = parts[1] ?? "";
   const mime = head.match(/data:(.*?);/)?.[1] ?? "image/png";
   const bin = atob(b64);
   const bytes = new Uint8Array(bin.length);
