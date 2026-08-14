@@ -3,12 +3,7 @@ import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
 type Role = "super_admin" | "prof" | "eleve";
 
-/** Approuveimport { createServerFn } from "@tanstack/react-start";
-import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
-
-type Role = "super_admin" | "prof" | "eleve";
-
- (ou refuse) un compte et lui attribue un rôle. Réservé au super administrateur. */
+/** Approuve (ou refuse) un compte et lui attribue un rôle. Réservé au super administrateur. */
 export const reviewAccount = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator(
