@@ -235,6 +235,233 @@ export type Database = {
           },
         ]
       }
+      curricula: {
+        Row: {
+          code: string
+          created_at: string
+          id: string
+          locale: string
+          metadata: Json
+          status: string
+          title: string
+          updated_at: string
+          version: string
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          id?: string
+          locale?: string
+          metadata?: Json
+          status?: string
+          title: string
+          updated_at?: string
+          version: string
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          id?: string
+          locale?: string
+          metadata?: Json
+          status?: string
+          title?: string
+          updated_at?: string
+          version?: string
+        }
+        Relationships: []
+      }
+      curriculum_lessons: {
+        Row: {
+          created_at: string
+          estimated_minutes: number
+          id: string
+          lesson_no: number
+          lesson_type: string
+          module_id: string
+          payload: Json
+          published: boolean
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          estimated_minutes?: number
+          id?: string
+          lesson_no: number
+          lesson_type: string
+          module_id: string
+          payload?: Json
+          published?: boolean
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          estimated_minutes?: number
+          id?: string
+          lesson_no?: number
+          lesson_type?: string
+          module_id?: string
+          payload?: Json
+          published?: boolean
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "curriculum_lessons_module_id_fkey"
+            columns: ["module_id"]
+            isOneToOne: false
+            referencedRelation: "curriculum_modules"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      curriculum_levels: {
+        Row: {
+          created_at: string
+          curriculum_id: string
+          grade: number
+          id: string
+          metadata: Json
+          terminal_performance: Json
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          curriculum_id: string
+          grade: number
+          id?: string
+          metadata?: Json
+          terminal_performance?: Json
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          curriculum_id?: string
+          grade?: number
+          id?: string
+          metadata?: Json
+          terminal_performance?: Json
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "curriculum_levels_curriculum_id_fkey"
+            columns: ["curriculum_id"]
+            isOneToOne: false
+            referencedRelation: "curricula"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      curriculum_modules: {
+        Row: {
+          created_at: string
+          id: string
+          level_id: string
+          module_no: number
+          payload: Json
+          position: number
+          published: boolean
+          theme: string
+          title: string
+          trimester: number
+          unit_no: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          level_id: string
+          module_no: number
+          payload?: Json
+          position: number
+          published?: boolean
+          theme: string
+          title: string
+          trimester: number
+          unit_no: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          level_id?: string
+          module_no?: number
+          payload?: Json
+          position?: number
+          published?: boolean
+          theme?: string
+          title?: string
+          trimester?: number
+          unit_no?: number
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "curriculum_modules_level_id_fkey"
+            columns: ["level_id"]
+            isOneToOne: false
+            referencedRelation: "curriculum_levels"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      learner_progress: {
+        Row: {
+          attempts: number
+          completed_at: string | null
+          created_at: string
+          id: string
+          lesson_id: string
+          mastery: Json
+          score: number | null
+          started_at: string | null
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          attempts?: number
+          completed_at?: string | null
+          created_at?: string
+          id?: string
+          lesson_id: string
+          mastery?: Json
+          score?: number | null
+          started_at?: string | null
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          attempts?: number
+          completed_at?: string | null
+          created_at?: string
+          id?: string
+          lesson_id?: string
+          mastery?: Json
+          score?: number | null
+          started_at?: string | null
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "learner_progress_lesson_id_fkey"
+            columns: ["lesson_id"]
+            isOneToOne: false
+            referencedRelation: "curriculum_lessons"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           avatar_url: string | null
