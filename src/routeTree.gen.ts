@@ -13,6 +13,8 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AuthenticatedEspaceIndexRouteImport } from './routes/_authenticated/espace.index'
+import { Route as AuthenticatedEspaceAdminRouteImport } from './routes/_authenticated/espace.admin'
+import { Route as AuthenticatedEspaceClassesIndexRouteImport } from './routes/_authenticated/espace.classes.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,30 +36,55 @@ const AuthenticatedEspaceIndexRoute =
     path: '/espace/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedEspaceAdminRoute =
+  AuthenticatedEspaceAdminRouteImport.update({
+    id: '/espace/admin',
+    path: '/espace/admin',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceClassesIndexRoute =
+  AuthenticatedEspaceClassesIndexRouteImport.update({
+    id: '/espace/classes/',
+    path: '/espace/classes/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/espace/admin': typeof AuthenticatedEspaceAdminRoute
   '/espace/': typeof AuthenticatedEspaceIndexRoute
+  '/espace/classes/': typeof AuthenticatedEspaceClassesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/espace/admin': typeof AuthenticatedEspaceAdminRoute
   '/espace': typeof AuthenticatedEspaceIndexRoute
+  '/espace/classes': typeof AuthenticatedEspaceClassesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
+  '/_authenticated/espace/admin': typeof AuthenticatedEspaceAdminRoute
   '/_authenticated/espace/': typeof AuthenticatedEspaceIndexRoute
+  '/_authenticated/espace/classes/': typeof AuthenticatedEspaceClassesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/auth' | '/espace/'
+  fullPaths: '/' | '/auth' | '/espace/admin' | '/espace/' | '/espace/classes/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth' | '/espace'
-  id: '__root__' | '/' | '/_authenticated' | '/auth' | '/_authenticated/espace/'
+  to: '/' | '/auth' | '/espace/admin' | '/espace' | '/espace/classes'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/auth'
+    | '/_authenticated/espace/admin'
+    | '/_authenticated/espace/'
+    | '/_authenticated/espace/classes/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -96,15 +123,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedEspaceIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/espace/admin': {
+      id: '/_authenticated/espace/admin'
+      path: '/espace/admin'
+      fullPath: '/espace/admin'
+      preLoaderRoute: typeof AuthenticatedEspaceAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/classes/': {
+      id: '/_authenticated/espace/classes/'
+      path: '/espace/classes'
+      fullPath: '/espace/classes/'
+      preLoaderRoute: typeof AuthenticatedEspaceClassesIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
 interface AuthenticatedRouteRouteChildren {
+  AuthenticatedEspaceAdminRoute: typeof AuthenticatedEspaceAdminRoute
   AuthenticatedEspaceIndexRoute: typeof AuthenticatedEspaceIndexRoute
+  AuthenticatedEspaceClassesIndexRoute: typeof AuthenticatedEspaceClassesIndexRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedEspaceAdminRoute: AuthenticatedEspaceAdminRoute,
   AuthenticatedEspaceIndexRoute: AuthenticatedEspaceIndexRoute,
+  AuthenticatedEspaceClassesIndexRoute: AuthenticatedEspaceClassesIndexRoute,
 }
 
 const AuthenticatedRouteRouteWithChildren =
