@@ -14,6 +14,7 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AuthenticatedEspaceIndexRouteImport } from './routes/_authenticated/espace.index'
 import { Route as AuthenticatedEspaceAdminRouteImport } from './routes/_authenticated/espace.admin'
+import { Route as AuthenticatedEspaceResultatsRouteImport } from './routes/_authenticated/espace.resultats'
 import { Route as AuthenticatedEspaceTravailRouteImport } from './routes/_authenticated/espace.travail'
 import { Route as AuthenticatedEspaceClassesIndexRouteImport } from './routes/_authenticated/espace.classes.index'
 import { Route as AuthenticatedEspaceClassesClassIdRouteImport } from './routes/_authenticated/espace.classes.$classId'
@@ -23,6 +24,7 @@ import { Route as AuthenticatedEspaceCoursNouveauRouteImport } from './routes/_a
 import { Route as AuthenticatedEspaceEvaluationsIndexRouteImport } from './routes/_authenticated/espace.evaluations.index'
 import { Route as AuthenticatedEspaceEvaluationsIdRouteImport } from './routes/_authenticated/espace.evaluations.$id'
 import { Route as AuthenticatedEspaceEvaluationsNouveauRouteImport } from './routes/_authenticated/espace.evaluations.nouveau'
+import { Route as AuthenticatedEspacePasserIdRouteImport } from './routes/_authenticated/espace.passer.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -48,6 +50,12 @@ const AuthenticatedEspaceAdminRoute =
   AuthenticatedEspaceAdminRouteImport.update({
     id: '/espace/admin',
     path: '/espace/admin',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceResultatsRoute =
+  AuthenticatedEspaceResultatsRouteImport.update({
+    id: '/espace/resultats',
+    path: '/espace/resultats',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
 const AuthenticatedEspaceTravailRoute =
@@ -104,11 +112,18 @@ const AuthenticatedEspaceEvaluationsNouveauRoute =
     path: '/espace/evaluations/nouveau',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedEspacePasserIdRoute =
+  AuthenticatedEspacePasserIdRouteImport.update({
+    id: '/espace/passer/$id',
+    path: '/espace/passer/$id',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/espace/admin': typeof AuthenticatedEspaceAdminRoute
+  '/espace/resultats': typeof AuthenticatedEspaceResultatsRoute
   '/espace/travail': typeof AuthenticatedEspaceTravailRoute
   '/espace/': typeof AuthenticatedEspaceIndexRoute
   '/espace/classes/$classId': typeof AuthenticatedEspaceClassesClassIdRoute
@@ -116,6 +131,7 @@ export interface FileRoutesByFullPath {
   '/espace/cours/nouveau': typeof AuthenticatedEspaceCoursNouveauRoute
   '/espace/evaluations/$id': typeof AuthenticatedEspaceEvaluationsIdRoute
   '/espace/evaluations/nouveau': typeof AuthenticatedEspaceEvaluationsNouveauRoute
+  '/espace/passer/$id': typeof AuthenticatedEspacePasserIdRoute
   '/espace/classes/': typeof AuthenticatedEspaceClassesIndexRoute
   '/espace/cours/': typeof AuthenticatedEspaceCoursIndexRoute
   '/espace/evaluations/': typeof AuthenticatedEspaceEvaluationsIndexRoute
@@ -124,6 +140,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/espace/admin': typeof AuthenticatedEspaceAdminRoute
+  '/espace/resultats': typeof AuthenticatedEspaceResultatsRoute
   '/espace/travail': typeof AuthenticatedEspaceTravailRoute
   '/espace': typeof AuthenticatedEspaceIndexRoute
   '/espace/classes/$classId': typeof AuthenticatedEspaceClassesClassIdRoute
@@ -131,6 +148,7 @@ export interface FileRoutesByTo {
   '/espace/cours/nouveau': typeof AuthenticatedEspaceCoursNouveauRoute
   '/espace/evaluations/$id': typeof AuthenticatedEspaceEvaluationsIdRoute
   '/espace/evaluations/nouveau': typeof AuthenticatedEspaceEvaluationsNouveauRoute
+  '/espace/passer/$id': typeof AuthenticatedEspacePasserIdRoute
   '/espace/classes': typeof AuthenticatedEspaceClassesIndexRoute
   '/espace/cours': typeof AuthenticatedEspaceCoursIndexRoute
   '/espace/evaluations': typeof AuthenticatedEspaceEvaluationsIndexRoute
@@ -141,6 +159,7 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
   '/_authenticated/espace/admin': typeof AuthenticatedEspaceAdminRoute
+  '/_authenticated/espace/resultats': typeof AuthenticatedEspaceResultatsRoute
   '/_authenticated/espace/travail': typeof AuthenticatedEspaceTravailRoute
   '/_authenticated/espace/': typeof AuthenticatedEspaceIndexRoute
   '/_authenticated/espace/classes/$classId': typeof AuthenticatedEspaceClassesClassIdRoute
@@ -148,6 +167,7 @@ export interface FileRoutesById {
   '/_authenticated/espace/cours/nouveau': typeof AuthenticatedEspaceCoursNouveauRoute
   '/_authenticated/espace/evaluations/$id': typeof AuthenticatedEspaceEvaluationsIdRoute
   '/_authenticated/espace/evaluations/nouveau': typeof AuthenticatedEspaceEvaluationsNouveauRoute
+  '/_authenticated/espace/passer/$id': typeof AuthenticatedEspacePasserIdRoute
   '/_authenticated/espace/classes/': typeof AuthenticatedEspaceClassesIndexRoute
   '/_authenticated/espace/cours/': typeof AuthenticatedEspaceCoursIndexRoute
   '/_authenticated/espace/evaluations/': typeof AuthenticatedEspaceEvaluationsIndexRoute
@@ -158,6 +178,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/espace/admin'
+    | '/espace/resultats'
     | '/espace/travail'
     | '/espace/'
     | '/espace/classes/$classId'
@@ -165,6 +186,7 @@ export interface FileRouteTypes {
     | '/espace/cours/nouveau'
     | '/espace/evaluations/$id'
     | '/espace/evaluations/nouveau'
+    | '/espace/passer/$id'
     | '/espace/classes/'
     | '/espace/cours/'
     | '/espace/evaluations/'
@@ -173,6 +195,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/espace/admin'
+    | '/espace/resultats'
     | '/espace/travail'
     | '/espace'
     | '/espace/classes/$classId'
@@ -180,6 +203,7 @@ export interface FileRouteTypes {
     | '/espace/cours/nouveau'
     | '/espace/evaluations/$id'
     | '/espace/evaluations/nouveau'
+    | '/espace/passer/$id'
     | '/espace/classes'
     | '/espace/cours'
     | '/espace/evaluations'
@@ -189,6 +213,7 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/auth'
     | '/_authenticated/espace/admin'
+    | '/_authenticated/espace/resultats'
     | '/_authenticated/espace/travail'
     | '/_authenticated/espace/'
     | '/_authenticated/espace/classes/$classId'
@@ -196,6 +221,7 @@ export interface FileRouteTypes {
     | '/_authenticated/espace/cours/nouveau'
     | '/_authenticated/espace/evaluations/$id'
     | '/_authenticated/espace/evaluations/nouveau'
+    | '/_authenticated/espace/passer/$id'
     | '/_authenticated/espace/classes/'
     | '/_authenticated/espace/cours/'
     | '/_authenticated/espace/evaluations/'
@@ -242,6 +268,13 @@ declare module '@tanstack/react-router' {
       path: '/espace/admin'
       fullPath: '/espace/admin'
       preLoaderRoute: typeof AuthenticatedEspaceAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/resultats': {
+      id: '/_authenticated/espace/resultats'
+      path: '/espace/resultats'
+      fullPath: '/espace/resultats'
+      preLoaderRoute: typeof AuthenticatedEspaceResultatsRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/espace/travail': {
@@ -307,11 +340,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedEspaceEvaluationsNouveauRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/espace/passer/$id': {
+      id: '/_authenticated/espace/passer/$id'
+      path: '/espace/passer/$id'
+      fullPath: '/espace/passer/$id'
+      preLoaderRoute: typeof AuthenticatedEspacePasserIdRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedEspaceAdminRoute: typeof AuthenticatedEspaceAdminRoute
+  AuthenticatedEspaceResultatsRoute: typeof AuthenticatedEspaceResultatsRoute
   AuthenticatedEspaceTravailRoute: typeof AuthenticatedEspaceTravailRoute
   AuthenticatedEspaceIndexRoute: typeof AuthenticatedEspaceIndexRoute
   AuthenticatedEspaceClassesClassIdRoute: typeof AuthenticatedEspaceClassesClassIdRoute
@@ -319,6 +360,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedEspaceCoursNouveauRoute: typeof AuthenticatedEspaceCoursNouveauRoute
   AuthenticatedEspaceEvaluationsIdRoute: typeof AuthenticatedEspaceEvaluationsIdRoute
   AuthenticatedEspaceEvaluationsNouveauRoute: typeof AuthenticatedEspaceEvaluationsNouveauRoute
+  AuthenticatedEspacePasserIdRoute: typeof AuthenticatedEspacePasserIdRoute
   AuthenticatedEspaceClassesIndexRoute: typeof AuthenticatedEspaceClassesIndexRoute
   AuthenticatedEspaceCoursIndexRoute: typeof AuthenticatedEspaceCoursIndexRoute
   AuthenticatedEspaceEvaluationsIndexRoute: typeof AuthenticatedEspaceEvaluationsIndexRoute
@@ -326,6 +368,7 @@ interface AuthenticatedRouteRouteChildren {
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedEspaceAdminRoute: AuthenticatedEspaceAdminRoute,
+  AuthenticatedEspaceResultatsRoute: AuthenticatedEspaceResultatsRoute,
   AuthenticatedEspaceTravailRoute: AuthenticatedEspaceTravailRoute,
   AuthenticatedEspaceIndexRoute: AuthenticatedEspaceIndexRoute,
   AuthenticatedEspaceClassesClassIdRoute:
@@ -335,6 +378,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedEspaceEvaluationsIdRoute: AuthenticatedEspaceEvaluationsIdRoute,
   AuthenticatedEspaceEvaluationsNouveauRoute:
     AuthenticatedEspaceEvaluationsNouveauRoute,
+  AuthenticatedEspacePasserIdRoute: AuthenticatedEspacePasserIdRoute,
   AuthenticatedEspaceClassesIndexRoute: AuthenticatedEspaceClassesIndexRoute,
   AuthenticatedEspaceCoursIndexRoute: AuthenticatedEspaceCoursIndexRoute,
   AuthenticatedEspaceEvaluationsIndexRoute:
