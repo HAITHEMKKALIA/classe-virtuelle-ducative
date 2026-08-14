@@ -3,17 +3,12 @@ import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
 type Role = "super_admin" | "prof" | "eleve";
 
-async function assertAdmin(supabase: {
-  rpc: (
-    fn: string,
-    args: Record<string, unknown>,
-  ) => Promise<{ data: unknown; error: unknown }>;
-}) {
-  const { data } = await supabase.rpc("has_role", { _user_id: undefined, _role: "super_admin" });
-  return Boolean(data);
-}
+/** Approuveimport { createServerFn } from "@tanstack/react-start";
+import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
-/** Approuve (ou refuse) un compte et lui attribue un rôle. Réservé au super administrateur. */
+type Role = "super_admin" | "prof" | "eleve";
+
+ (ou refuse) un compte et lui attribue un rôle. Réservé au super administrateur. */
 export const reviewAccount = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator(
@@ -101,5 +96,3 @@ export const listAllUsers = createServerFn({ method: "GET" })
       roles: (roles ?? []) as { user_id: string; role: Role }[],
     };
   });
-
-export { assertAdmin };
