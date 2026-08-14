@@ -19,6 +19,8 @@ import { Route as AuthenticatedEspaceClassesClassIdRouteImport } from './routes/
 import { Route as AuthenticatedEspaceCoursIndexRouteImport } from './routes/_authenticated/espace.cours.index'
 import { Route as AuthenticatedEspaceCoursCourseIdRouteImport } from './routes/_authenticated/espace.cours.$courseId'
 import { Route as AuthenticatedEspaceCoursNouveauRouteImport } from './routes/_authenticated/espace.cours.nouveau'
+import { Route as AuthenticatedEspaceEvaluationsIndexRouteImport } from './routes/_authenticated/espace.evaluations.index'
+import { Route as AuthenticatedEspaceEvaluationsNouveauRouteImport } from './routes/_authenticated/espace.evaluations.nouveau'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -76,6 +78,18 @@ const AuthenticatedEspaceCoursNouveauRoute =
     path: '/espace/cours/nouveau',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedEspaceEvaluationsIndexRoute =
+  AuthenticatedEspaceEvaluationsIndexRouteImport.update({
+    id: '/espace/evaluations/',
+    path: '/espace/evaluations/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceEvaluationsNouveauRoute =
+  AuthenticatedEspaceEvaluationsNouveauRouteImport.update({
+    id: '/espace/evaluations/nouveau',
+    path: '/espace/evaluations/nouveau',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -85,8 +99,10 @@ export interface FileRoutesByFullPath {
   '/espace/classes/$classId': typeof AuthenticatedEspaceClassesClassIdRoute
   '/espace/cours/$courseId': typeof AuthenticatedEspaceCoursCourseIdRoute
   '/espace/cours/nouveau': typeof AuthenticatedEspaceCoursNouveauRoute
+  '/espace/evaluations/nouveau': typeof AuthenticatedEspaceEvaluationsNouveauRoute
   '/espace/classes/': typeof AuthenticatedEspaceClassesIndexRoute
   '/espace/cours/': typeof AuthenticatedEspaceCoursIndexRoute
+  '/espace/evaluations/': typeof AuthenticatedEspaceEvaluationsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -96,8 +112,10 @@ export interface FileRoutesByTo {
   '/espace/classes/$classId': typeof AuthenticatedEspaceClassesClassIdRoute
   '/espace/cours/$courseId': typeof AuthenticatedEspaceCoursCourseIdRoute
   '/espace/cours/nouveau': typeof AuthenticatedEspaceCoursNouveauRoute
+  '/espace/evaluations/nouveau': typeof AuthenticatedEspaceEvaluationsNouveauRoute
   '/espace/classes': typeof AuthenticatedEspaceClassesIndexRoute
   '/espace/cours': typeof AuthenticatedEspaceCoursIndexRoute
+  '/espace/evaluations': typeof AuthenticatedEspaceEvaluationsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -109,8 +127,10 @@ export interface FileRoutesById {
   '/_authenticated/espace/classes/$classId': typeof AuthenticatedEspaceClassesClassIdRoute
   '/_authenticated/espace/cours/$courseId': typeof AuthenticatedEspaceCoursCourseIdRoute
   '/_authenticated/espace/cours/nouveau': typeof AuthenticatedEspaceCoursNouveauRoute
+  '/_authenticated/espace/evaluations/nouveau': typeof AuthenticatedEspaceEvaluationsNouveauRoute
   '/_authenticated/espace/classes/': typeof AuthenticatedEspaceClassesIndexRoute
   '/_authenticated/espace/cours/': typeof AuthenticatedEspaceCoursIndexRoute
+  '/_authenticated/espace/evaluations/': typeof AuthenticatedEspaceEvaluationsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -122,8 +142,10 @@ export interface FileRouteTypes {
     | '/espace/classes/$classId'
     | '/espace/cours/$courseId'
     | '/espace/cours/nouveau'
+    | '/espace/evaluations/nouveau'
     | '/espace/classes/'
     | '/espace/cours/'
+    | '/espace/evaluations/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -133,8 +155,10 @@ export interface FileRouteTypes {
     | '/espace/classes/$classId'
     | '/espace/cours/$courseId'
     | '/espace/cours/nouveau'
+    | '/espace/evaluations/nouveau'
     | '/espace/classes'
     | '/espace/cours'
+    | '/espace/evaluations'
   id:
     | '__root__'
     | '/'
@@ -145,8 +169,10 @@ export interface FileRouteTypes {
     | '/_authenticated/espace/classes/$classId'
     | '/_authenticated/espace/cours/$courseId'
     | '/_authenticated/espace/cours/nouveau'
+    | '/_authenticated/espace/evaluations/nouveau'
     | '/_authenticated/espace/classes/'
     | '/_authenticated/espace/cours/'
+    | '/_authenticated/espace/evaluations/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -227,6 +253,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedEspaceCoursNouveauRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/espace/evaluations/': {
+      id: '/_authenticated/espace/evaluations/'
+      path: '/espace/evaluations'
+      fullPath: '/espace/evaluations/'
+      preLoaderRoute: typeof AuthenticatedEspaceEvaluationsIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/evaluations/nouveau': {
+      id: '/_authenticated/espace/evaluations/nouveau'
+      path: '/espace/evaluations/nouveau'
+      fullPath: '/espace/evaluations/nouveau'
+      preLoaderRoute: typeof AuthenticatedEspaceEvaluationsNouveauRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
@@ -236,8 +276,10 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedEspaceClassesClassIdRoute: typeof AuthenticatedEspaceClassesClassIdRoute
   AuthenticatedEspaceCoursCourseIdRoute: typeof AuthenticatedEspaceCoursCourseIdRoute
   AuthenticatedEspaceCoursNouveauRoute: typeof AuthenticatedEspaceCoursNouveauRoute
+  AuthenticatedEspaceEvaluationsNouveauRoute: typeof AuthenticatedEspaceEvaluationsNouveauRoute
   AuthenticatedEspaceClassesIndexRoute: typeof AuthenticatedEspaceClassesIndexRoute
   AuthenticatedEspaceCoursIndexRoute: typeof AuthenticatedEspaceCoursIndexRoute
+  AuthenticatedEspaceEvaluationsIndexRoute: typeof AuthenticatedEspaceEvaluationsIndexRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
@@ -247,8 +289,12 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
     AuthenticatedEspaceClassesClassIdRoute,
   AuthenticatedEspaceCoursCourseIdRoute: AuthenticatedEspaceCoursCourseIdRoute,
   AuthenticatedEspaceCoursNouveauRoute: AuthenticatedEspaceCoursNouveauRoute,
+  AuthenticatedEspaceEvaluationsNouveauRoute:
+    AuthenticatedEspaceEvaluationsNouveauRoute,
   AuthenticatedEspaceClassesIndexRoute: AuthenticatedEspaceClassesIndexRoute,
   AuthenticatedEspaceCoursIndexRoute: AuthenticatedEspaceCoursIndexRoute,
+  AuthenticatedEspaceEvaluationsIndexRoute:
+    AuthenticatedEspaceEvaluationsIndexRoute,
 }
 
 const AuthenticatedRouteRouteWithChildren =
