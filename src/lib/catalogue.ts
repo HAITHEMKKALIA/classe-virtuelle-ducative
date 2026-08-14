@@ -1,22 +1,13 @@
-import grammaireImg from "@/assets/cours/grammaire.jpg";
-import conjugaisonImg from "@/assets/cours/conjugaison.jpg";
-import orthographeImg from "@/assets/cours/orthographe.jpg";
-import vocabulaireImg from "@/assets/cours/vocabulaire.jpg";
-import lectureImg from "@/assets/cours/lecture.jpg";
-import ecriteImg from "@/assets/cours/expression_ecrite.jpg";
-import oraleImg from "@/assets/cours/expression_orale.jpg";
-import poesieImg from "@/assets/cours/poesie.jpg";
-
 /** Illustration officielle associée à chaque matière du programme. */
 export const IMAGE_MATIERE: Record<string, string> = {
-  grammaire: grammaireImg,
-  conjugaison: conjugaisonImg,
-  orthographe: orthographeImg,
-  vocabulaire: vocabulaireImg,
-  lecture: lectureImg,
-  expression_ecrite: ecriteImg,
-  expression_orale: oraleImg,
-  poesie: poesieImg,
+  grammaire: "/assets-cours/grammaire.jpg",
+  conjugaison: "/assets-cours/conjugaison.jpg",
+  orthographe: "/assets-cours/orthographe.jpg",
+  vocabulaire: "/assets-cours/vocabulaire.jpg",
+  lecture: "/assets-cours/lecture.jpg",
+  expression_ecrite: "/assets-cours/expression_ecrite.jpg",
+  expression_orale: "/assets-cours/expression_orale.jpg",
+  poesie: "/assets-cours/poesie.jpg",
 };
 
 export type Lecon = {
