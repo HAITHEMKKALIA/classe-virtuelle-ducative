@@ -13,7 +13,7 @@ export async function uploadMedia(file: File | Blob, folder = "uploads", ext = "
 
 export async function signedUrl(path: string, seconds = 60 * 60 * 8) {
   if (!path) return "";
-  if (path.startsWith("http") || path.startsWith("data:")) return path;
+  if (path.startsWith("http") || path.startsWith("data:") || path.startsWith("/")) return path;
   const { data, error } = await supabase.storage.from(BUCKET).createSignedUrl(path, seconds);
   if (error) return "";
   return data.signedUrl;
