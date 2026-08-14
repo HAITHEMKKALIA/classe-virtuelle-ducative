@@ -53,9 +53,14 @@ function CoursPage() {
         subtitle="Programme officiel tunisien, par niveau et par trimestre."
         action={
           isProf ? (
-            <Button asChild>
-              <Link to="/espace/cours/nouveau">Nouveau cours</Link>
-            </Button>
+            <div className="flex flex-wrap gap-2">
+              <Button asChild variant="outline">
+                <Link to="/espace/cours/importer">Importer le programme complet</Link>
+              </Button>
+              <Button asChild>
+                <Link to="/espace/cours/nouveau">Nouveau cours</Link>
+              </Button>
+            </div>
           ) : undefined
         }
       />
