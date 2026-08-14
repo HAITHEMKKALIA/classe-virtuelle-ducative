@@ -10,33 +10,227 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AuthenticatedEspaceIndexRouteImport } from './routes/_authenticated/espace.index'
+import { Route as AuthenticatedEspaceAdminRouteImport } from './routes/_authenticated/espace.admin'
+import { Route as AuthenticatedEspaceResultatsRouteImport } from './routes/_authenticated/espace.resultats'
+import { Route as AuthenticatedEspaceTravailRouteImport } from './routes/_authenticated/espace.travail'
+import { Route as AuthenticatedEspaceClassesIndexRouteImport } from './routes/_authenticated/espace.classes.index'
+import { Route as AuthenticatedEspaceClassesClassIdRouteImport } from './routes/_authenticated/espace.classes.$classId'
+import { Route as AuthenticatedEspaceCoursIndexRouteImport } from './routes/_authenticated/espace.cours.index'
+import { Route as AuthenticatedEspaceCoursCourseIdRouteImport } from './routes/_authenticated/espace.cours.$courseId'
+import { Route as AuthenticatedEspaceCoursNouveauRouteImport } from './routes/_authenticated/espace.cours.nouveau'
+import { Route as AuthenticatedEspaceEvaluationsIndexRouteImport } from './routes/_authenticated/espace.evaluations.index'
+import { Route as AuthenticatedEspaceEvaluationsIdRouteImport } from './routes/_authenticated/espace.evaluations.$id'
+import { Route as AuthenticatedEspaceEvaluationsNouveauRouteImport } from './routes/_authenticated/espace.evaluations.nouveau'
+import { Route as AuthenticatedEspacePasserIdRouteImport } from './routes/_authenticated/espace.passer.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedEspaceIndexRoute =
+  AuthenticatedEspaceIndexRouteImport.update({
+    id: '/espace/',
+    path: '/espace/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceAdminRoute =
+  AuthenticatedEspaceAdminRouteImport.update({
+    id: '/espace/admin',
+    path: '/espace/admin',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceResultatsRoute =
+  AuthenticatedEspaceResultatsRouteImport.update({
+    id: '/espace/resultats',
+    path: '/espace/resultats',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceTravailRoute =
+  AuthenticatedEspaceTravailRouteImport.update({
+    id: '/espace/travail',
+    path: '/espace/travail',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceClassesIndexRoute =
+  AuthenticatedEspaceClassesIndexRouteImport.update({
+    id: '/espace/classes/',
+    path: '/espace/classes/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceClassesClassIdRoute =
+  AuthenticatedEspaceClassesClassIdRouteImport.update({
+    id: '/espace/classes/$classId',
+    path: '/espace/classes/$classId',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceCoursIndexRoute =
+  AuthenticatedEspaceCoursIndexRouteImport.update({
+    id: '/espace/cours/',
+    path: '/espace/cours/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceCoursCourseIdRoute =
+  AuthenticatedEspaceCoursCourseIdRouteImport.update({
+    id: '/espace/cours/$courseId',
+    path: '/espace/cours/$courseId',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceCoursNouveauRoute =
+  AuthenticatedEspaceCoursNouveauRouteImport.update({
+    id: '/espace/cours/nouveau',
+    path: '/espace/cours/nouveau',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceEvaluationsIndexRoute =
+  AuthenticatedEspaceEvaluationsIndexRouteImport.update({
+    id: '/espace/evaluations/',
+    path: '/espace/evaluations/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceEvaluationsIdRoute =
+  AuthenticatedEspaceEvaluationsIdRouteImport.update({
+    id: '/espace/evaluations/$id',
+    path: '/espace/evaluations/$id',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceEvaluationsNouveauRoute =
+  AuthenticatedEspaceEvaluationsNouveauRouteImport.update({
+    id: '/espace/evaluations/nouveau',
+    path: '/espace/evaluations/nouveau',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspacePasserIdRoute =
+  AuthenticatedEspacePasserIdRouteImport.update({
+    id: '/espace/passer/$id',
+    path: '/espace/passer/$id',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/espace/admin': typeof AuthenticatedEspaceAdminRoute
+  '/espace/resultats': typeof AuthenticatedEspaceResultatsRoute
+  '/espace/travail': typeof AuthenticatedEspaceTravailRoute
+  '/espace/': typeof AuthenticatedEspaceIndexRoute
+  '/espace/classes/$classId': typeof AuthenticatedEspaceClassesClassIdRoute
+  '/espace/cours/$courseId': typeof AuthenticatedEspaceCoursCourseIdRoute
+  '/espace/cours/nouveau': typeof AuthenticatedEspaceCoursNouveauRoute
+  '/espace/evaluations/$id': typeof AuthenticatedEspaceEvaluationsIdRoute
+  '/espace/evaluations/nouveau': typeof AuthenticatedEspaceEvaluationsNouveauRoute
+  '/espace/passer/$id': typeof AuthenticatedEspacePasserIdRoute
+  '/espace/classes/': typeof AuthenticatedEspaceClassesIndexRoute
+  '/espace/cours/': typeof AuthenticatedEspaceCoursIndexRoute
+  '/espace/evaluations/': typeof AuthenticatedEspaceEvaluationsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/espace/admin': typeof AuthenticatedEspaceAdminRoute
+  '/espace/resultats': typeof AuthenticatedEspaceResultatsRoute
+  '/espace/travail': typeof AuthenticatedEspaceTravailRoute
+  '/espace': typeof AuthenticatedEspaceIndexRoute
+  '/espace/classes/$classId': typeof AuthenticatedEspaceClassesClassIdRoute
+  '/espace/cours/$courseId': typeof AuthenticatedEspaceCoursCourseIdRoute
+  '/espace/cours/nouveau': typeof AuthenticatedEspaceCoursNouveauRoute
+  '/espace/evaluations/$id': typeof AuthenticatedEspaceEvaluationsIdRoute
+  '/espace/evaluations/nouveau': typeof AuthenticatedEspaceEvaluationsNouveauRoute
+  '/espace/passer/$id': typeof AuthenticatedEspacePasserIdRoute
+  '/espace/classes': typeof AuthenticatedEspaceClassesIndexRoute
+  '/espace/cours': typeof AuthenticatedEspaceCoursIndexRoute
+  '/espace/evaluations': typeof AuthenticatedEspaceEvaluationsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/auth': typeof AuthRoute
+  '/_authenticated/espace/admin': typeof AuthenticatedEspaceAdminRoute
+  '/_authenticated/espace/resultats': typeof AuthenticatedEspaceResultatsRoute
+  '/_authenticated/espace/travail': typeof AuthenticatedEspaceTravailRoute
+  '/_authenticated/espace/': typeof AuthenticatedEspaceIndexRoute
+  '/_authenticated/espace/classes/$classId': typeof AuthenticatedEspaceClassesClassIdRoute
+  '/_authenticated/espace/cours/$courseId': typeof AuthenticatedEspaceCoursCourseIdRoute
+  '/_authenticated/espace/cours/nouveau': typeof AuthenticatedEspaceCoursNouveauRoute
+  '/_authenticated/espace/evaluations/$id': typeof AuthenticatedEspaceEvaluationsIdRoute
+  '/_authenticated/espace/evaluations/nouveau': typeof AuthenticatedEspaceEvaluationsNouveauRoute
+  '/_authenticated/espace/passer/$id': typeof AuthenticatedEspacePasserIdRoute
+  '/_authenticated/espace/classes/': typeof AuthenticatedEspaceClassesIndexRoute
+  '/_authenticated/espace/cours/': typeof AuthenticatedEspaceCoursIndexRoute
+  '/_authenticated/espace/evaluations/': typeof AuthenticatedEspaceEvaluationsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/espace/admin'
+    | '/espace/resultats'
+    | '/espace/travail'
+    | '/espace/'
+    | '/espace/classes/$classId'
+    | '/espace/cours/$courseId'
+    | '/espace/cours/nouveau'
+    | '/espace/evaluations/$id'
+    | '/espace/evaluations/nouveau'
+    | '/espace/passer/$id'
+    | '/espace/classes/'
+    | '/espace/cours/'
+    | '/espace/evaluations/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/auth'
+    | '/espace/admin'
+    | '/espace/resultats'
+    | '/espace/travail'
+    | '/espace'
+    | '/espace/classes/$classId'
+    | '/espace/cours/$courseId'
+    | '/espace/cours/nouveau'
+    | '/espace/evaluations/$id'
+    | '/espace/evaluations/nouveau'
+    | '/espace/passer/$id'
+    | '/espace/classes'
+    | '/espace/cours'
+    | '/espace/evaluations'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/auth'
+    | '/_authenticated/espace/admin'
+    | '/_authenticated/espace/resultats'
+    | '/_authenticated/espace/travail'
+    | '/_authenticated/espace/'
+    | '/_authenticated/espace/classes/$classId'
+    | '/_authenticated/espace/cours/$courseId'
+    | '/_authenticated/espace/cours/nouveau'
+    | '/_authenticated/espace/evaluations/$id'
+    | '/_authenticated/espace/evaluations/nouveau'
+    | '/_authenticated/espace/passer/$id'
+    | '/_authenticated/espace/classes/'
+    | '/_authenticated/espace/cours/'
+    | '/_authenticated/espace/evaluations/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AuthRoute: typeof AuthRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +242,156 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/espace/': {
+      id: '/_authenticated/espace/'
+      path: '/espace'
+      fullPath: '/espace/'
+      preLoaderRoute: typeof AuthenticatedEspaceIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/admin': {
+      id: '/_authenticated/espace/admin'
+      path: '/espace/admin'
+      fullPath: '/espace/admin'
+      preLoaderRoute: typeof AuthenticatedEspaceAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/resultats': {
+      id: '/_authenticated/espace/resultats'
+      path: '/espace/resultats'
+      fullPath: '/espace/resultats'
+      preLoaderRoute: typeof AuthenticatedEspaceResultatsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/travail': {
+      id: '/_authenticated/espace/travail'
+      path: '/espace/travail'
+      fullPath: '/espace/travail'
+      preLoaderRoute: typeof AuthenticatedEspaceTravailRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/classes/': {
+      id: '/_authenticated/espace/classes/'
+      path: '/espace/classes'
+      fullPath: '/espace/classes/'
+      preLoaderRoute: typeof AuthenticatedEspaceClassesIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/classes/$classId': {
+      id: '/_authenticated/espace/classes/$classId'
+      path: '/espace/classes/$classId'
+      fullPath: '/espace/classes/$classId'
+      preLoaderRoute: typeof AuthenticatedEspaceClassesClassIdRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/cours/': {
+      id: '/_authenticated/espace/cours/'
+      path: '/espace/cours'
+      fullPath: '/espace/cours/'
+      preLoaderRoute: typeof AuthenticatedEspaceCoursIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/cours/$courseId': {
+      id: '/_authenticated/espace/cours/$courseId'
+      path: '/espace/cours/$courseId'
+      fullPath: '/espace/cours/$courseId'
+      preLoaderRoute: typeof AuthenticatedEspaceCoursCourseIdRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/cours/nouveau': {
+      id: '/_authenticated/espace/cours/nouveau'
+      path: '/espace/cours/nouveau'
+      fullPath: '/espace/cours/nouveau'
+      preLoaderRoute: typeof AuthenticatedEspaceCoursNouveauRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/evaluations/': {
+      id: '/_authenticated/espace/evaluations/'
+      path: '/espace/evaluations'
+      fullPath: '/espace/evaluations/'
+      preLoaderRoute: typeof AuthenticatedEspaceEvaluationsIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/evaluations/$id': {
+      id: '/_authenticated/espace/evaluations/$id'
+      path: '/espace/evaluations/$id'
+      fullPath: '/espace/evaluations/$id'
+      preLoaderRoute: typeof AuthenticatedEspaceEvaluationsIdRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/evaluations/nouveau': {
+      id: '/_authenticated/espace/evaluations/nouveau'
+      path: '/espace/evaluations/nouveau'
+      fullPath: '/espace/evaluations/nouveau'
+      preLoaderRoute: typeof AuthenticatedEspaceEvaluationsNouveauRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/passer/$id': {
+      id: '/_authenticated/espace/passer/$id'
+      path: '/espace/passer/$id'
+      fullPath: '/espace/passer/$id'
+      preLoaderRoute: typeof AuthenticatedEspacePasserIdRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedEspaceAdminRoute: typeof AuthenticatedEspaceAdminRoute
+  AuthenticatedEspaceResultatsRoute: typeof AuthenticatedEspaceResultatsRoute
+  AuthenticatedEspaceTravailRoute: typeof AuthenticatedEspaceTravailRoute
+  AuthenticatedEspaceIndexRoute: typeof AuthenticatedEspaceIndexRoute
+  AuthenticatedEspaceClassesClassIdRoute: typeof AuthenticatedEspaceClassesClassIdRoute
+  AuthenticatedEspaceCoursCourseIdRoute: typeof AuthenticatedEspaceCoursCourseIdRoute
+  AuthenticatedEspaceCoursNouveauRoute: typeof AuthenticatedEspaceCoursNouveauRoute
+  AuthenticatedEspaceEvaluationsIdRoute: typeof AuthenticatedEspaceEvaluationsIdRoute
+  AuthenticatedEspaceEvaluationsNouveauRoute: typeof AuthenticatedEspaceEvaluationsNouveauRoute
+  AuthenticatedEspacePasserIdRoute: typeof AuthenticatedEspacePasserIdRoute
+  AuthenticatedEspaceClassesIndexRoute: typeof AuthenticatedEspaceClassesIndexRoute
+  AuthenticatedEspaceCoursIndexRoute: typeof AuthenticatedEspaceCoursIndexRoute
+  AuthenticatedEspaceEvaluationsIndexRoute: typeof AuthenticatedEspaceEvaluationsIndexRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedEspaceAdminRoute: AuthenticatedEspaceAdminRoute,
+  AuthenticatedEspaceResultatsRoute: AuthenticatedEspaceResultatsRoute,
+  AuthenticatedEspaceTravailRoute: AuthenticatedEspaceTravailRoute,
+  AuthenticatedEspaceIndexRoute: AuthenticatedEspaceIndexRoute,
+  AuthenticatedEspaceClassesClassIdRoute:
+    AuthenticatedEspaceClassesClassIdRoute,
+  AuthenticatedEspaceCoursCourseIdRoute: AuthenticatedEspaceCoursCourseIdRoute,
+  AuthenticatedEspaceCoursNouveauRoute: AuthenticatedEspaceCoursNouveauRoute,
+  AuthenticatedEspaceEvaluationsIdRoute: AuthenticatedEspaceEvaluationsIdRoute,
+  AuthenticatedEspaceEvaluationsNouveauRoute:
+    AuthenticatedEspaceEvaluationsNouveauRoute,
+  AuthenticatedEspacePasserIdRoute: AuthenticatedEspacePasserIdRoute,
+  AuthenticatedEspaceClassesIndexRoute: AuthenticatedEspaceClassesIndexRoute,
+  AuthenticatedEspaceCoursIndexRoute: AuthenticatedEspaceCoursIndexRoute,
+  AuthenticatedEspaceEvaluationsIndexRoute:
+    AuthenticatedEspaceEvaluationsIndexRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AuthRoute: AuthRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
