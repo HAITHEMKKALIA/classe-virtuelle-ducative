@@ -95,7 +95,7 @@ function CoursPage() {
   useEffect(() => {
     let active = true;
     void (async () => {
-      const requests = [
+      const [courseResult, levelResult, moduleResult, lessonResult] = await Promise.all([
         supabase
           .from("courses")
           .select("id, titre, resume, matiere, niveau, trimestre, published, cover_image_url")
@@ -111,8 +111,7 @@ function CoursPage() {
           .select("id, module_id, lesson_no, title, lesson_type, estimated_minutes")
           .eq("published", true)
           .order("lesson_no"),
-      ];
-      const [courseResult, levelResult, moduleResult, lessonResult] = await Promise.all(requests);
+      ]);
       const progressResult = user
         ? await supabase
             .from("learner_progress")
