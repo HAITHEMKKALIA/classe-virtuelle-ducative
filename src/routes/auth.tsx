@@ -47,7 +47,10 @@ function AuthPage() {
     setLoading(true);
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setLoading(false);
-    if (error) return toast.error(error.message);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
     void navigate({ to: "/espace" });
   };
 
@@ -63,7 +66,10 @@ function AuthPage() {
       },
     });
     setLoading(false);
-    if (error) return toast.error(error.message);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
     toast.success("Compte créé. Il doit être approuvé avant l'accès complet.");
     void navigate({ to: "/espace" });
   };
@@ -74,7 +80,10 @@ function AuthPage() {
       redirect_uri: window.location.origin,
     });
     setLoading(false);
-    if (result.error) return toast.error("Connexion Google impossible.");
+    if (result.error) {
+      toast.error("Connexion Google impossible.");
+      return;
+    }
     if (result.redirected) return;
     void navigate({ to: "/espace" });
   };
