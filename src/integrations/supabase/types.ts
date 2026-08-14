@@ -401,6 +401,7 @@ export type Database = {
         Args: { _assessment_id: string; _user_id: string }
         Returns: boolean
       }
+      claim_super_admin: { Args: never; Returns: boolean }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
