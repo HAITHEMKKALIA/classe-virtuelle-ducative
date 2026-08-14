@@ -418,6 +418,7 @@ export type Database = {
         Args: { _class_id: string; _user_id: string }
         Returns: boolean
       }
+      join_class_by_code: { Args: { _code: string }; Returns: boolean }
       owns_assessment: {
         Args: { _assessment_id: string; _user_id: string }
         Returns: boolean
