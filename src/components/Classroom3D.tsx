@@ -2,7 +2,6 @@ import { Suspense, useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
   ContactShadows,
-  Environment,
   Float,
   Html,
   OrbitControls,
@@ -190,7 +189,6 @@ export default function Classroom3D({
             <Avatar3D key={e.user_id} p={e} position={pos} index={i} />
           ))}
           <ContactShadows position={[0, 0.01, 0]} opacity={0.35} scale={22} blur={2.5} far={6} />
-          <Environment preset="city" />
           <CameraCinema actif={cinematique} />
           {!cinematique && (
             <OrbitControls
