@@ -342,16 +342,30 @@ export default function Classroom3D({
             </group>
           ))}
           <ContactShadows position={[0, 0.02, 0]} opacity={0.35} scale={24} blur={2.5} far={6} />
-          <CameraRig cinematique={cinematique} angleCible={FACES[face]!.angle} libre={libre} />
-          {libre && (
-            <OrbitControls
-              enablePan={false}
-              minDistance={3}
-              maxDistance={12}
-              maxPolarAngle={Math.PI / 2.05}
-              target={[0, 1.3, -1]}
-            />
-          )}
+          <CameraRig
+            controlsRef={controlsRef}
+            angleCible={FACES[face]!.angle}
+            cinema={cinema}
+            animation={animation}
+            finAnimation={() => setAnimation(false)}
+          />
+          <OrbitControls
+            ref={controlsRef}
+            enablePan={false}
+            enableDamping
+            dampingFactor={0.08}
+            rotateSpeed={0.7}
+            minDistance={3}
+            maxDistance={13}
+            maxPolarAngle={Math.PI / 2.05}
+            target={[0, 1.3, -1]}
+            autoRotate={cinema && !animation}
+            autoRotateSpeed={0.6}
+            onStart={() => {
+              setAnimation(false);
+              setCinema(false);
+            }}
+          />
         </Suspense>
       </Canvas>
 
@@ -361,11 +375,12 @@ export default function Classroom3D({
           <Button
             key={f.cle}
             size="sm"
-            variant={!libre && face === i ? "default" : "ghost"}
+            variant={!cinema && face === i ? "default" : "ghost"}
             className="h-7 rounded-full px-3 text-xs"
             onClick={() => {
-              setLibre(false);
+              setCinema(false);
               setFace(i);
+              setAnimation(true);
             }}
           >
             {f.label}
@@ -373,17 +388,23 @@ export default function Classroom3D({
         ))}
         <Button
           size="sm"
-          variant={libre ? "default" : "ghost"}
+          variant={cinema ? "default" : "ghost"}
           className="h-7 rounded-full px-3 text-xs"
-          onClick={() => setLibre((v) => !v)}
+          onClick={() => {
+            setAnimation(false);
+            setCinema((v) => !v);
+          }}
         >
-          360°
+          {cinema ? "Stop 360°" : "Rotation 360°"}
         </Button>
       </div>
 
       <div className="pointer-events-none absolute bottom-3 left-3 rounded-full bg-background/85 px-3 py-1 text-[11px] text-muted-foreground shadow">
-        {libre ? "Navigation libre : glissez pour tourner, molette pour zoomer" : `Vue ${FACES[face]!.label.toLowerCase()}`}
+        {cinema
+          ? "Rotation automatique — glissez pour reprendre la main"
+          : `Vue ${FACES[face]!.label.toLowerCase()} · glissez pour tourner, molette pour zoomer`}
       </div>
+
 
       {eleves.length === 0 && (
         <div className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-background/85 px-3 py-1 text-xs text-muted-foreground shadow">
