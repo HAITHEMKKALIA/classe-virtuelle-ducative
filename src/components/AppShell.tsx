@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import {
   BookOpen,
   ClipboardList,
+  FolderOpen,
   GraduationCap,
   Home,
   LogOut,
