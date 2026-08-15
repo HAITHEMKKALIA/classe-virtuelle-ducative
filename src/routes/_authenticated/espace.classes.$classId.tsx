@@ -81,8 +81,24 @@ function ClassDetail() {
         subtitle={classe ? `Code d'invitation : ${classe.code_invitation}` : ""}
       />
 
-      <div className="grid gap-6 lg:grid-cols-[1fr_1.2fr]">
-        <div className="space-y-6">
+      <Tabs defaultValue="live">
+        <TabsList>
+          <TabsTrigger value="live">Classe virtuelle</TabsTrigger>
+          <TabsTrigger value="gestion">Gestion des élèves</TabsTrigger>
+          <TabsTrigger value="chat">Messagerie</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="live" className="mt-6">
+          <VirtualClassroom
+            classId={classId}
+            members={approved.map((m) => ({
+              student_id: m.student_id,
+              nom: m.profiles?.full_name ?? "Élève",
+            }))}
+          />
+        </TabsContent>
+
+        <TabsContent value="gestion" className="mt-6 space-y-6">
           {isProf && (
             <Card>
               <CardHeader>
@@ -101,11 +117,7 @@ function ClassDetail() {
                       <Button size="sm" onClick={() => decider(m.id, "approved")}>
                         Approuver
                       </Button>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        onClick={() => decider(m.id, "rejected")}
-                      >
+                      <Button size="sm" variant="outline" onClick={() => decider(m.id, "rejected")}>
                         Refuser
                       </Button>
                     </div>
@@ -136,49 +148,20 @@ function ClassDetail() {
               )}
             </CardContent>
           </Card>
-        </div>
+        </TabsContent>
 
-        <Card className="flex h-[32rem] flex-col">
-          <CardHeader>
-            <CardTitle className="font-display text-lg">Messagerie de la classe</CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-1 flex-col gap-3 overflow-hidden">
-            <div className="flex-1 space-y-3 overflow-y-auto pr-1">
-              {messages.map((m) => {
-                const mine = m.sender_id === user?.id;
-                return (
-                  <div key={m.id} className={mine ? "text-right" : ""}>
-                    <span
-                      className={`inline-block max-w-[85%] rounded-2xl px-4 py-2 text-sm ${
-                        mine ? "bg-primary text-primary-foreground" : "bg-muted"
-                      }`}
-                    >
-                      {!mine && (
-                        <span className="mb-1 block text-xs opacity-70">
-                          {names[m.sender_id] ?? "Professeur"}
-                        </span>
-                      )}
-                      {m.content}
-                    </span>
-                  </div>
-                );
-              })}
-              <div ref={bottom} />
-            </div>
-            <div className="flex gap-2">
-              <Input
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && void envoyer()}
-                placeholder="Écrire un message…"
-              />
-              <Button onClick={envoyer} size="icon" aria-label="Envoyer">
-                <Send className="size-4" />
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+        <TabsContent value="chat" className="mt-6">
+          <Card className="flex h-[36rem] flex-col">
+            <CardHeader>
+              <CardTitle className="font-display text-lg">Messagerie de la classe</CardTitle>
+            </CardHeader>
+            <CardContent className="flex min-h-0 flex-1 flex-col overflow-hidden">
+              <ClassChat classId={classId} names={names} />
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+
     </AppShell>
   );
 }
