@@ -1,4 +1,7 @@
-import { GraduationCap } from "lucide-react";
+import { lazy, Suspense, useState } from "react";
+import { ClientOnly } from "@tanstack/react-router";
+import { Boxes, GraduationCap, Move3d, Video } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export type Participant = { user_id: string; nom: string; role: string };
 
@@ -94,6 +97,79 @@ function Stage2D({
         <p className="py-6 text-center text-sm text-muted-foreground">
           La salle est vide : aucun élève connecté pour le moment.
         </p>
+      )}
+    </div>
+  );
+}
+
+const Classroom3D = lazy(() => import("@/components/Classroom3D"));
+
+/** Salle de classe virtuelle : rendu 3D cinématique avec repli 2D. */
+export function ClassroomStage({
+  prof,
+  eleves,
+  titreTableau,
+}: {
+  prof?: Participant | undefined;
+  eleves: Participant[];
+  titreTableau?: string | undefined;
+}) {
+  const [mode, setMode] = useState<"3d" | "2d">("3d");
+  const [cinematique, setCinematique] = useState(true);
+  const titre = titreTableau ?? "Tableau de la classe";
+
+  return (
+    <div className="space-y-3">
+      <div className="flex flex-wrap items-center justify-end gap-2">
+        {mode === "3d" && (
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            onClick={() => setCinematique((v) => !v)}
+            className="gap-1.5"
+          >
+            {cinematique ? <Video className="size-4" /> : <Move3d className="size-4" />}
+            {cinematique ? "Mode cinéma" : "Navigation libre"}
+          </Button>
+        )}
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          onClick={() => setMode((m) => (m === "3d" ? "2d" : "3d"))}
+          className="gap-1.5"
+        >
+          <Boxes className="size-4" />
+          {mode === "3d" ? "Vue simple" : "Vue 3D"}
+        </Button>
+      </div>
+
+      {mode === "3d" ? (
+        <ClientOnly
+          fallback={
+            <div className="flex h-[420px] items-center justify-center rounded-2xl border border-border bg-muted/40 text-sm text-muted-foreground">
+              Chargement de la salle 3D…
+            </div>
+          }
+        >
+          <Suspense
+            fallback={
+              <div className="flex h-[420px] items-center justify-center rounded-2xl border border-border bg-muted/40 text-sm text-muted-foreground">
+                Chargement de la salle 3D…
+              </div>
+            }
+          >
+            <Classroom3D
+              prof={prof}
+              eleves={eleves}
+              titreTableau={titre}
+              cinematique={cinematique}
+            />
+          </Suspense>
+        </ClientOnly>
+      ) : (
+        <Stage2D prof={prof} eleves={eleves} titreTableau={titreTableau} />
       )}
     </div>
   );
