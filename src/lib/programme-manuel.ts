@@ -54,7 +54,7 @@ export async function uploadFichierProgramme(file: File, profId: string) {
   const path = `${profId}/programmes/${crypto.randomUUID()}.${extensionDe(file.name)}`;
   const { error } = await supabase.storage.from(BUCKET).upload(path, file, {
     upsert: false,
-    contentType: file.type || undefined,
+    contentType: file.type || "application/octet-stream",
   });
   if (error) throw error;
   return { path, nom: file.name, mime: file.type || null, taille: file.size };
