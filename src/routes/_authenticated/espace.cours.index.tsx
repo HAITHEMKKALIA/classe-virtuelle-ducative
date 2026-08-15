@@ -332,7 +332,7 @@ function CoursPage() {
                                   <dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                                     {domaine}
                                   </dt>
-                                  <dd className="mt-1 text-sm">{items.join(" • ")}</dd>
+                                  <dd className="mt-1 text-sm">{(items as string[]).join(" • ")}</dd>
                                 </div>
                               ))}
                             </dl>
