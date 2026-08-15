@@ -235,7 +235,8 @@ const assessments = sourceEvals.map((a) => {
     },
     questions: choisis.map((e, i) => ({
       ordre: i + 1,
-      type: typeQuestion(e.type),
+      // Une question n'est un QCM que si elle propose réellement des choix.
+      type: e.options.length >= 2 ? typeQuestion(e.type) : typeQuestion(e.type) === "qcm" ? "court" : typeQuestion(e.type),
       enonce: `${e.consigne} ${e.enonce}`.trim(),
       options: e.options,
       reponse_correcte: e.reponse_correcte,

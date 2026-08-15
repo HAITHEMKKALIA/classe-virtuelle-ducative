@@ -1408,7 +1408,7 @@
         },
         {
           "ordre": 11,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
@@ -1627,7 +1627,7 @@
         },
         {
           "ordre": 11,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
@@ -1846,7 +1846,7 @@
         },
         {
           "ordre": 11,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
@@ -2065,7 +2065,7 @@
         },
         {
           "ordre": 11,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
@@ -2260,7 +2260,7 @@
         },
         {
           "ordre": 8,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Réponds aux questions tirées du module. Rendons notre environnement plus agréable",
           "options": [],
           "reponse_correcte": null,
@@ -2353,7 +2353,7 @@
         },
         {
           "ordre": 16,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Réponds aux questions tirées du module. Apprenons à vivre ensemble",
           "options": [],
           "reponse_correcte": null,
@@ -2446,7 +2446,7 @@
         },
         {
           "ordre": 24,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Réponds aux questions tirées du module. Aidons et respectons les autres",
           "options": [],
           "reponse_correcte": null,
@@ -2568,7 +2568,7 @@
         },
         {
           "ordre": 8,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Réponds aux questions tirées du module. Découvrons les secrets d'une bonne santé",
           "options": [],
           "reponse_correcte": null,
@@ -2661,7 +2661,7 @@
         },
         {
           "ordre": 16,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Réponds aux questions tirées du module. Organisons notre vie entre le travail et les loisirs",
           "options": [],
           "reponse_correcte": null,
@@ -2754,7 +2754,7 @@
         },
         {
           "ordre": 24,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Réponds aux questions tirées du module. Découvrons d'autres pays",
           "options": [],
           "reponse_correcte": null,
@@ -2940,7 +2940,7 @@
         },
         {
           "ordre": 15,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Réponds aux questions tirées du module. Réalisons des projets",
           "options": [],
           "reponse_correcte": null,
@@ -2949,7 +2949,7 @@
         },
         {
           "ordre": 16,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
@@ -4832,7 +4832,7 @@
         },
         {
           "ordre": 11,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
@@ -5051,7 +5051,7 @@
         },
         {
           "ordre": 11,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
@@ -5270,7 +5270,7 @@
         },
         {
           "ordre": 11,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
@@ -5489,7 +5489,7 @@
         },
         {
           "ordre": 11,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
@@ -5684,7 +5684,7 @@
         },
         {
           "ordre": 8,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Réponds aux questions tirées du module. Travailler pour s'épanouir",
           "options": [],
           "reponse_correcte": null,
@@ -5777,7 +5777,7 @@
         },
         {
           "ordre": 16,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Réponds aux questions tirées du module. Communiquer avec les autres",
           "options": [],
           "reponse_correcte": null,
@@ -5870,7 +5870,7 @@
         },
         {
           "ordre": 24,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Réponds aux questions tirées du module. Accepter les autres",
           "options": [],
           "reponse_correcte": null,
@@ -5992,7 +5992,7 @@
         },
         {
           "ordre": 8,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Réponds aux questions tirées du module. S'entraider pour mieux réussir",
           "options": [],
           "reponse_correcte": null,
@@ -6085,7 +6085,7 @@
         },
         {
           "ordre": 16,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Réponds aux questions tirées du module. Sauver la nature",
           "options": [],
           "reponse_correcte": null,
@@ -6178,7 +6178,7 @@
         },
         {
           "ordre": 24,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Réponds aux questions tirées du module. Être en forme et mieux se porter",
           "options": [],
           "reponse_correcte": null,
@@ -6364,7 +6364,7 @@
         },
         {
           "ordre": 15,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Réponds aux questions tirées du module. Profiter de son temps libre",
           "options": [],
           "reponse_correcte": null,
@@ -6373,7 +6373,7 @@
         },
         {
           "ordre": 16,
-          "type": "qcm",
+          "type": "court",
           "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
