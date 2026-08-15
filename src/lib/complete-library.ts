@@ -215,13 +215,46 @@ export function contenuBibliotheque(
   dictee: BibliothequeDictee | undefined,
 ): string {
   const exos = exercices.filter((e) => lecon.exercice_ids.includes(e.id));
+  const m = lecon.module;
   return [
     `![${lecon.titre}](${lecon.illustration})`,
     "",
     `> ${AVERTISSEMENT_VALIDATION}`,
     "",
+    ...(lecon.cours ? [lecon.cours.introduction, ""] : []),
     "## Objectifs d'apprentissage",
     ...lecon.objectifs.map((o) => `- ${o}`),
+    ...(m
+      ? [
+          "",
+          `## Repères du module — ${m.theme}`,
+          `**Objectifs de communication :** ${m.objectifs_communication.join(" · ")}`,
+          "",
+          `**Structures à employer :** ${m.structures.join(" · ")}`,
+          "",
+          `**Lexique du thème :** ${m.lexique.join(", ")}`,
+          "",
+          "**Étude de la langue :**",
+          `- Grammaire : ${m.etude_langue.grammaire.join(" ; ")}`,
+          `- Conjugaison : ${m.etude_langue.conjugaison.join(" ; ")}`,
+          `- Orthographe : ${m.etude_langue.orthographe.join(" ; ")}`,
+          `- Vocabulaire : ${m.etude_langue.vocabulaire.join(" ; ")}`,
+          "",
+          `**Projet d'écriture :** ${m.projet_ecriture}`,
+          "",
+          `**Critères d'évaluation :** ${m.criteres.join(" · ")}`,
+        ]
+      : []),
+    ...(lecon.cours
+      ? [
+          "",
+          "## Leçon",
+          lecon.cours.explication,
+          "",
+          "**Exemples :**",
+          ...lecon.cours.exemples.map((e) => `- ${e}`),
+        ]
+      : []),
     "",
     "## Déroulé de la séance",
     ...lecon.deroule.map((d, i) => `${i + 1}. ${d}`),
@@ -253,9 +286,13 @@ export function contenuBibliotheque(
       (e, i) =>
         `${i + 1}. **${e.consigne}** ${e.enonce}${e.options?.length ? `\n   - ${e.options.join("\n   - ")}` : ""}`,
     ),
+    ...(lecon.cours?.differenciation.length
+      ? ["", "## Différenciation", ...lecon.cours.differenciation.map((d) => `- ${d}`)]
+      : []),
     "",
     "## Trace écrite",
-    `Recopie la règle de la séance et illustre-la par deux exemples liés au thème « ${lecon.module_titre} ».`,
+    lecon.cours?.trace ??
+      `Recopie la règle de la séance et illustre-la par deux exemples liés au thème « ${lecon.module_titre} ».`,
   ].join("\n");
 }
 
