@@ -583,6 +583,56 @@ export type Database = {
           },
         ]
       }
+      manual_programs: {
+        Row: {
+          class_id: string | null
+          contenu: string
+          created_at: string
+          description: string | null
+          id: string
+          niveau: number | null
+          prof_id: string
+          published: boolean
+          titre: string
+          trimestre: number | null
+          updated_at: string
+        }
+        Insert: {
+          class_id?: string | null
+          contenu?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          niveau?: number | null
+          prof_id: string
+          published?: boolean
+          titre: string
+          trimestre?: number | null
+          updated_at?: string
+        }
+        Update: {
+          class_id?: string | null
+          contenu?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          niveau?: number | null
+          prof_id?: string
+          published?: boolean
+          titre?: string
+          trimestre?: number | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "manual_programs_class_id_fkey"
+            columns: ["class_id"]
+            isOneToOne: false
+            referencedRelation: "classes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -618,6 +668,47 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      program_files: {
+        Row: {
+          created_at: string
+          id: string
+          mime: string | null
+          nom: string
+          path: string
+          prof_id: string
+          program_id: string
+          taille: number | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          mime?: string | null
+          nom: string
+          path: string
+          prof_id: string
+          program_id: string
+          taille?: number | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          mime?: string | null
+          nom?: string
+          path?: string
+          prof_id?: string
+          program_id?: string
+          taille?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "program_files_program_id_fkey"
+            columns: ["program_id"]
+            isOneToOne: false
+            referencedRelation: "manual_programs"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       questions: {
         Row: {
@@ -767,6 +858,7 @@ export type Database = {
         Args: { _assessment_id: string; _user_id: string }
         Returns: boolean
       }
+      can_view_program: { Args: { _program_id: string }; Returns: boolean }
       claim_super_admin: { Args: never; Returns: boolean }
       get_assessment_questions_for_student: {
         Args: { _assessment_id: string }
