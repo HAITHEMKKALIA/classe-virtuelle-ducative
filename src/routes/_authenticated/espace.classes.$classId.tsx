@@ -1,16 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useServerFn } from "@tanstack/react-start";
 import { AppShell, PageHeader } from "@/components/AppShell";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { reviewStudent } from "@/lib/admin.functions";
+import { ClassChat } from "@/components/ClassChat";
+import { VirtualClassroom } from "@/components/VirtualClassroom";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Send } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const Route = createFileRoute("/_authenticated/espace/classes/$classId")({
   component: ClassDetail,
@@ -22,18 +23,15 @@ type Member = {
   status: "pending" | "approved" | "rejected";
   profiles: { full_name: string; email: string } | null;
 };
-type Message = { id: string; content: string; sender_id: string; created_at: string };
 
 function ClassDetail() {
   const { classId } = Route.useParams();
-  const { user, isProf } = useAuth();
+  const { isProf } = useAuth();
   const review = useServerFn(reviewStudent);
   const [classe, setClasse] = useState<{ nom: string; code_invitation: string } | null>(null);
   const [members, setMembers] = useState<Member[]>([]);
-  const [messages, setMessages] = useState<Message[]>([]);
   const [names, setNames] = useState<Record<string, string>>({});
-  const [text, setText] = useState("");
-  const bottom = useRef<HTMLDivElement>(null);
+
 
   const loadMembers = async () => {
     const { data } = await supabase
