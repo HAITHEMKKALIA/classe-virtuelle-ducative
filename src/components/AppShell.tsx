@@ -37,6 +37,7 @@ export function AppShell({ children }: { children: ReactNode }) {
     );
   } else {
     items.push(
+      { to: "/espace/classes", label: "Ma classe", icon: Users },
       { to: "/espace/cours", label: "Mes cours", icon: BookOpen },
       { to: "/espace/programme", label: "Programme manuel", icon: FolderOpen },
       { to: "/espace/travail", label: "Devoirs & examens", icon: ClipboardList },
