@@ -1,8 +1,8 @@
 {
-  "nom": "Ma Classe de Français TN — bibliothèque originale",
-  "version": "1.0.0",
-  "licence": "Contenu original. Aucun extrait de manuel protégé du CNP n'est reproduit.",
-  "avertissement": "Contenu généré pour la préparation des séances : une validation humaine par l'enseignant est obligatoire avant publication aux élèves.",
+  "nom": "Bibliothèque originale - Français 5e et 6e année - Tunisie",
+  "version": "2.0.0",
+  "licence": "Contenus originaux structurés selon le périmètre pédagogique tunisien. Aucun texte, exercice ou visuel du CNP n'est reproduit.",
+  "avertissement": "Contenu importé en brouillon : une validation humaine par l'enseignant est obligatoire avant publication aux élèves.",
   "niveaux": 2,
   "trimestres": 3,
   "modules": 16,
