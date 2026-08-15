@@ -140,9 +140,9 @@ function CameraCinema({ actif }: { actif: boolean }) {
   useFrame((state) => {
     if (!actif) return;
     const t = state.clock.elapsedTime * 0.12;
-    state.camera.position.x = Math.sin(t) * 3.2;
+    state.camera.position.x = Math.sin(t) * 1.7;
     state.camera.position.y = 3.4 + Math.sin(t * 0.7) * 0.35;
-    state.camera.position.z = 8.4 + Math.cos(t) * 1.1;
+    state.camera.position.z = 9.2 + Math.cos(t) * 0.9;
     state.camera.lookAt(0, 1.4, -3);
   });
   return null;
@@ -186,7 +186,10 @@ export default function Classroom3D({
           <Salle titre={titreTableau} />
           {prof && <Avatar3D p={prof} position={[-2.6, 0, -2.3]} prof />}
           {places.map(({ e, pos }, i) => (
-            <Avatar3D key={e.user_id} p={e} position={pos} index={i} />
+            <group key={e.user_id}>
+              <Pupitre position={pos} />
+              <Avatar3D p={e} position={pos} index={i} />
+            </group>
           ))}
           <ContactShadows position={[0, 0.01, 0]} opacity={0.35} scale={22} blur={2.5} far={6} />
           <CameraCinema actif={cinematique} />
