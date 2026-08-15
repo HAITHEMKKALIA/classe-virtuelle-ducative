@@ -12,7 +12,7 @@ type Props = {
   question: ExerciseQuestion;
   value: string;
   onChange: (value: string) => void;
-  disabled?: boolean;
+  disabled?: boolean | undefined;
 };
 
 function parseListe(value: string): string[] {
