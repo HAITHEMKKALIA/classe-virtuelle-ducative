@@ -251,35 +251,41 @@ function Salle({ titre }: { titre: string }) {
   );
 }
 
-/** Caméra : travelling cinéma ou rotation par face (4 côtés). */
+/** Caméra : orbite manuelle permanente + transition douce vers une face + rotation auto (cinéma). */
 function CameraRig({
-  cinematique,
+  controlsRef,
   angleCible,
-  libre,
+  cinema,
+  animation,
+  finAnimation,
 }: {
-  cinematique: boolean;
+  controlsRef: React.MutableRefObject<any>;
   angleCible: number;
-  libre: boolean;
+  cinema: boolean;
+  animation: boolean;
+  finAnimation: () => void;
 }) {
-  const cible = useMemo(() => new THREE.Vector3(0, 1.4, -1), []);
-  useFrame((state, delta) => {
-    if (libre) return;
-    const cam = state.camera;
-    const rayon = 6.5;
-    const angle = cinematique
-      ? angleCible + Math.sin(state.clock.elapsedTime * 0.12) * 0.35
-      : angleCible;
-    const hauteur = cinematique ? 3.8 + Math.sin(state.clock.elapsedTime * 0.25) * 0.4 : 3.6;
-    const voulu = new THREE.Vector3(
-      cible.x + Math.sin(angle) * rayon,
-      hauteur,
-      cible.z + Math.cos(angle) * rayon,
-    );
-    cam.position.lerp(voulu, Math.min(1, delta * 2.2));
-    cam.lookAt(cible);
+  useFrame((_, delta) => {
+    const c = controlsRef.current;
+    if (!c || !animation) return;
+    const actuel = c.getAzimuthalAngle();
+    let ecart = angleCible - actuel;
+    while (ecart > Math.PI) ecart -= Math.PI * 2;
+    while (ecart < -Math.PI) ecart += Math.PI * 2;
+    if (Math.abs(ecart) < 0.01) {
+      c.setAzimuthalAngle(angleCible);
+      c.update();
+      finAnimation();
+      return;
+    }
+    c.setAzimuthalAngle(actuel + ecart * Math.min(1, delta * 4));
+    c.update();
   });
+  void cinema;
   return null;
 }
+
+
 
 export default function Classroom3D({
   prof,
