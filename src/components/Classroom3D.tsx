@@ -315,7 +315,8 @@ function DrapeauTunisien({ position }: { position: [number, number, number] }) {
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
-    const pos = geometry.attributes.position;
+    const pos = geometry.attributes['position'] as THREE.BufferAttribute | undefined;
+    if (!pos) return;
     const t = clock.elapsedTime * 2.5;
     for (let i = 0; i < pos.count; i++) {
       const x = pos.getX(i);
@@ -337,8 +338,7 @@ function DrapeauTunisien({ position }: { position: [number, number, number] }) {
         <meshStandardMaterial color="#fbbf24" roughness={0.2} metalness={0.8} />
       </mesh>
       {/* drapeau */}
-      <mesh ref={ref} position={[0.94, 2.25, 0]} rotation={[0, -Math.PI / 12, 0]} castShadow side={THREE.DoubleSide}>
-        <primitive object={geometry} attach="geometry" />
+      <mesh ref={ref} geometry={geometry} position={[0.94, 2.25, 0]} rotation={[0, -Math.PI / 12, 0]} castShadow>
         <meshStandardMaterial map={texture} side={THREE.DoubleSide} roughness={0.6} metalness={0.05} />
       </mesh>
     </group>
