@@ -142,7 +142,9 @@ for (const niveau of source.levels) {
       for (const ex of l.exercises) {
         const { options, reponse } = normaliserReponse(ex);
         const enonce = Array.isArray(ex.prompt)
-          ? ex.prompt.map((p) => (typeof p === "string" ? p : Object.values(p).join(" → "))).join(" | ")
+          ? ex.prompt
+              .map((p) => (typeof p === "string" ? p : Object.values(p).join(" → ")))
+              .join(" | ")
           : String(ex.prompt ?? "");
         const e = {
           id: ex.id,
@@ -217,8 +219,9 @@ const assessments = sourceEvals.map((a) => {
     id: a.id,
     grade: a.grade,
     module_no: a.module_numbers[0],
-    trimestre: lessons.find((l) => l.grade === a.grade && l.module_no === a.module_numbers[0])
-      ?.trimestre ?? 1,
+    trimestre:
+      lessons.find((l) => l.grade === a.grade && l.module_no === a.module_numbers[0])?.trimestre ??
+      1,
     type: TYPE_EVAL[a.kind] ?? "devoir",
     titre: a.title,
     consignes:
@@ -236,7 +239,12 @@ const assessments = sourceEvals.map((a) => {
     questions: choisis.map((e, i) => ({
       ordre: i + 1,
       // Une question n'est un QCM que si elle propose réellement des choix.
-      type: e.options.length >= 2 ? typeQuestion(e.type) : typeQuestion(e.type) === "qcm" ? "court" : typeQuestion(e.type),
+      type:
+        e.options.length >= 2
+          ? typeQuestion(e.type)
+          : typeQuestion(e.type) === "qcm"
+            ? "court"
+            : typeQuestion(e.type),
       enonce: `${e.consigne} ${e.enonce}`.trim(),
       options: e.options,
       reponse_correcte: e.reponse_correcte,
