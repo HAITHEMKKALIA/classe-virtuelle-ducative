@@ -37,25 +37,54 @@ const PALETTE = {
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-function svg(titre, sousTitre, matiere) {
-  const [bg, accent] = PALETTE[matiere] ?? PALETTE.lecture;
-  const mots = String(titre).split(" ");
-  const l1 = mots.slice(0, 4).join(" ");
-  const l2 = mots.slice(4, 9).join(" ");
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="${esc(titre)}">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="${bg}"/><stop offset="100%" stop-color="${accent}" stop-opacity="0.85"/>
-  </linearGradient></defs>
-  <rect width="800" height="500" fill="url(#g)"/>
-  <circle cx="660" cy="90" r="120" fill="#ffffff" opacity="0.08"/>
-  <circle cx="120" cy="430" r="150" fill="#ffffff" opacity="0.06"/>
-  <rect x="56" y="330" width="180" height="10" rx="5" fill="${accent}"/>
-  <text x="56" y="180" fill="#ffffff" font-family="Georgia, serif" font-size="46" font-weight="700">${esc(l1)}</text>
-  ${l2 ? `<text x="56" y="236" fill="#ffffff" font-family="Georgia, serif" font-size="46" font-weight="700">${esc(l2)}</text>` : ""}
-  <text x="56" y="300" fill="#ffffff" opacity="0.85" font-family="Helvetica, Arial, sans-serif" font-size="24">${esc(sousTitre)}</text>
-  <text x="56" y="420" fill="#ffffff" opacity="0.7" font-family="Helvetica, Arial, sans-serif" font-size="20">Ma Classe de Français TN — contenu original</text>
+// Thème visuel par module (style « carte éducative » officiel)
+const MODULE_THEME = {
+  1: { c: "#1F6E5A", bg: "#DDF4EC" },
+  2: { c: "#3056A6", bg: "#E3EBFF" },
+  3: { c: "#B4531F", bg: "#FDEBDD" },
+  4: { c: "#7A3E9D", bg: "#F1E6FA" },
+  5: { c: "#0F6E86", bg: "#DDF1F7" },
+  6: { c: "#9C1F4B", bg: "#FBE3EC" },
+  7: { c: "#556B12", bg: "#EEF5D9" },
+  8: { c: "#2F4858", bg: "#E4ECF1" },
+};
+
+function motif(n, c) {
+  switch (n % 4) {
+    case 1:
+      return `<path d="M400 330 C520 130 720 170 710 360 C700 530 510 560 410 450 C500 390 570 330 640 245 C555 315 480 360 390 405 Z" fill="${c}" opacity=".92"/>`;
+    case 2:
+      return `<path d="M325 230 H695 Q750 230 750 285 V455 Q750 510 695 510 H500 L390 595 L420 510 H325 Q270 510 270 455 V285 Q270 230 325 230Z" fill="${c}"/><circle cx="390" cy="370" r="24" fill="white"/><circle cx="510" cy="370" r="24" fill="white"/><circle cx="630" cy="370" r="24" fill="white"/>`;
+    case 3:
+      return `<path d="M280 250 H500 Q510 300 510 520 H280 Z" fill="${c}"/><path d="M740 250 H520 Q510 300 510 520 H740 Z" fill="${c}" opacity=".72"/><rect x="270" y="520" width="480" height="26" rx="13" fill="${c}"/>`;
+    default:
+      return `<circle cx="510" cy="380" r="150" fill="${c}" opacity=".9"/><path d="M430 380 h160 M510 300 v160" stroke="white" stroke-width="26" stroke-linecap="round"/>`;
+  }
+}
+
+function svg({ grade, moduleNo, moduleTitle, lessonNo, lessonTitle }) {
+  const { c, bg } = MODULE_THEME[moduleNo] ?? MODULE_THEME[1];
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Illustration du module ${moduleNo}, leçon ${lessonNo}</title>
+  <desc id="desc">Carte éducative originale pour ${esc(moduleTitle)} : ${esc(lessonTitle)}</desc>
+  <rect width="1200" height="675" rx="48" fill="${bg}"/>
+  <circle cx="1030" cy="80" r="210" fill="${c}" opacity=".10"/>
+  <circle cx="110" cy="620" r="190" fill="${c}" opacity=".08"/>
+  <rect x="65" y="55" width="245" height="55" rx="27" fill="${c}"/>
+  <text x="187" y="91" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="white">${grade}e ANNÉE • M${moduleNo}</text>
+  <g transform="translate(90 25)">${motif(moduleNo, c)}</g>
+  <text x="800" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="${c}">MODULE ${moduleNo}</text>
+  <foreignObject x="655" y="280" width="485" height="150">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Arial,sans-serif;font-size:34px;line-height:1.18;font-weight:700;color:${c};text-align:center;padding:8px">${esc(moduleTitle)}</div>
+  </foreignObject>
+  <rect x="650" y="455" width="500" height="105" rx="24" fill="white" opacity=".92"/>
+  <foreignObject x="680" y="470" width="440" height="75">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Arial,sans-serif;font-size:23px;line-height:1.25;color:#263238;text-align:center">Leçon ${lessonNo} • ${esc(lessonTitle)}</div>
+  </foreignObject>
+  <text x="1125" y="640" text-anchor="end" font-family="Arial, sans-serif" font-size="18" fill="${c}">Illustration originale • fr-TN</text>
 </svg>`;
 }
+
 
 const QCM = new Set(["multiple_choice", "reading_mcq", "mixed_quiz", "error_classification"]);
 const REDACTION = new Set([
@@ -137,7 +166,7 @@ for (const niveau of source.levels) {
       illustrations.add(illustration);
       writeFileSync(
         `${OUT}${illustration.replace("/programme/", "")}`,
-        svg(l.title, `${grade}ᵉ année — Module ${mod.number} — ${mod.title}`, matiere),
+        svg({ grade, moduleNo: mod.number, moduleTitle: mod.title, lessonNo: l.day, lessonTitle: l.title }),
       );
       for (const ex of l.exercises) {
         const { options, reponse } = normaliserReponse(ex);

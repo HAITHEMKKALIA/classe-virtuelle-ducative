@@ -1,13 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Lancement et expression orale">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#0f2d4a"/><stop offset="100%" stop-color="#f5a524" stop-opacity="0.85"/>
-  </linearGradient></defs>
-  <rect width="800" height="500" fill="url(#g)"/>
-  <circle cx="660" cy="90" r="120" fill="#ffffff" opacity="0.08"/>
-  <circle cx="120" cy="430" r="150" fill="#ffffff" opacity="0.06"/>
-  <rect x="56" y="330" width="180" height="10" rx="5" fill="#f5a524"/>
-  <text x="56" y="180" fill="#ffffff" font-family="Georgia, serif" font-size="46" font-weight="700">Lancement et expression orale</text>
-  
-  <text x="56" y="300" fill="#ffffff" opacity="0.85" font-family="Helvetica, Arial, sans-serif" font-size="24">5ᵉ année — Module 1 — Rendons notre environnement plus agréable</text>
-  <text x="56" y="420" fill="#ffffff" opacity="0.7" font-family="Helvetica, Arial, sans-serif" font-size="20">Ma Classe de Français TN — contenu original</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Illustration du module 1, leçon 1</title>
+  <desc id="desc">Carte éducative originale pour Rendons notre environnement plus agréable : Lancement et expression orale</desc>
+  <rect width="1200" height="675" rx="48" fill="#DDF4EC"/>
+  <circle cx="1030" cy="80" r="210" fill="#1F6E5A" opacity=".10"/>
+  <circle cx="110" cy="620" r="190" fill="#1F6E5A" opacity=".08"/>
+  <rect x="65" y="55" width="245" height="55" rx="27" fill="#1F6E5A"/>
+  <text x="187" y="91" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="white">5e ANNÉE • M1</text>
+  <g transform="translate(90 25)"><path d="M400 330 C520 130 720 170 710 360 C700 530 510 560 410 450 C500 390 570 330 640 245 C555 315 480 360 390 405 Z" fill="#1F6E5A" opacity=".92"/></g>
+  <text x="800" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#1F6E5A">MODULE 1</text>
+  <foreignObject x="655" y="280" width="485" height="150">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Arial,sans-serif;font-size:34px;line-height:1.18;font-weight:700;color:#1F6E5A;text-align:center;padding:8px">Rendons notre environnement plus agréable</div>
+  </foreignObject>
+  <rect x="650" y="455" width="500" height="105" rx="24" fill="white" opacity=".92"/>
+  <foreignObject x="680" y="470" width="440" height="75">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Arial,sans-serif;font-size:23px;line-height:1.25;color:#263238;text-align:center">Leçon 1 • Lancement et expression orale</div>
+  </foreignObject>
+  <text x="1125" y="640" text-anchor="end" font-family="Arial, sans-serif" font-size="18" fill="#1F6E5A">Illustration originale • fr-TN</text>
 </svg>
