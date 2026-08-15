@@ -18,16 +18,22 @@ export type Database = {
         Row: {
           anti_cheat: Json
           class_id: string | null
+          competences: Json
           consignes: string | null
+          correction_immediate: boolean
           created_at: string
           duree_minutes: number
           ferme_at: string | null
           id: string
           matiere: string
           niveau: number
+          ordre_aleatoire: boolean
           ouvre_at: string | null
           prof_id: string
           published: boolean
+          resultats_publies: boolean
+          retard_accepte: boolean
+          tentatives_max: number
           titre: string
           trimestre: number
           type: string
@@ -36,16 +42,22 @@ export type Database = {
         Insert: {
           anti_cheat?: Json
           class_id?: string | null
+          competences?: Json
           consignes?: string | null
+          correction_immediate?: boolean
           created_at?: string
           duree_minutes?: number
           ferme_at?: string | null
           id?: string
           matiere?: string
           niveau?: number
+          ordre_aleatoire?: boolean
           ouvre_at?: string | null
           prof_id: string
           published?: boolean
+          resultats_publies?: boolean
+          retard_accepte?: boolean
+          tentatives_max?: number
           titre: string
           trimestre?: number
           type?: string
@@ -54,16 +66,22 @@ export type Database = {
         Update: {
           anti_cheat?: Json
           class_id?: string | null
+          competences?: Json
           consignes?: string | null
+          correction_immediate?: boolean
           created_at?: string
           duree_minutes?: number
           ferme_at?: string | null
           id?: string
           matiere?: string
           niveau?: number
+          ordre_aleatoire?: boolean
           ouvre_at?: string | null
           prof_id?: string
           published?: boolean
+          resultats_publies?: boolean
+          retard_accepte?: boolean
+          tentatives_max?: number
           titre?: string
           trimestre?: number
           type?: string
@@ -462,6 +480,109 @@ export type Database = {
           },
         ]
       }
+      lesson_step_progress: {
+        Row: {
+          answers: Json
+          attempts: number
+          completed_at: string | null
+          created_at: string
+          id: string
+          score: number | null
+          status: string
+          step_id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          answers?: Json
+          attempts?: number
+          completed_at?: string | null
+          created_at?: string
+          id?: string
+          score?: number | null
+          status?: string
+          step_id: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          answers?: Json
+          attempts?: number
+          completed_at?: string | null
+          created_at?: string
+          id?: string
+          score?: number | null
+          status?: string
+          step_id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lesson_step_progress_step_id_fkey"
+            columns: ["step_id"]
+            isOneToOne: false
+            referencedRelation: "lesson_steps"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      lesson_steps: {
+        Row: {
+          content: string
+          created_at: string
+          created_by: string | null
+          id: string
+          kind: string
+          lesson_id: string
+          media_kind: string | null
+          media_url: string | null
+          payload: Json
+          published: boolean
+          step_no: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          content?: string
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          kind: string
+          lesson_id: string
+          media_kind?: string | null
+          media_url?: string | null
+          payload?: Json
+          published?: boolean
+          step_no: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          kind?: string
+          lesson_id?: string
+          media_kind?: string | null
+          media_url?: string | null
+          payload?: Json
+          published?: boolean
+          step_no?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lesson_steps_lesson_id_fkey"
+            columns: ["lesson_id"]
+            isOneToOne: false
+            referencedRelation: "curriculum_lessons"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -501,36 +622,45 @@ export type Database = {
       questions: {
         Row: {
           assessment_id: string
+          audio_url: string | null
           created_at: string
           enonce: string
+          explication: string | null
           id: string
           image_url: string | null
           options: Json
           ordre: number
+          payload: Json
           points: number
           reponse_correcte: string | null
           type: string
         }
         Insert: {
           assessment_id: string
+          audio_url?: string | null
           created_at?: string
           enonce: string
+          explication?: string | null
           id?: string
           image_url?: string | null
           options?: Json
           ordre?: number
+          payload?: Json
           points?: number
           reponse_correcte?: string | null
           type?: string
         }
         Update: {
           assessment_id?: string
+          audio_url?: string | null
           created_at?: string
           enonce?: string
+          explication?: string | null
           id?: string
           image_url?: string | null
           options?: Json
           ordre?: number
+          payload?: Json
           points?: number
           reponse_correcte?: string | null
           type?: string
@@ -549,10 +679,12 @@ export type Database = {
         Row: {
           answers: Json
           assessment_id: string
+          attempt: number
           cheat_events: Json
           feedback: string | null
           graded_at: string | null
           id: string
+          last_saved_at: string | null
           per_question: Json
           score: number | null
           started_at: string
@@ -564,10 +696,12 @@ export type Database = {
         Insert: {
           answers?: Json
           assessment_id: string
+          attempt?: number
           cheat_events?: Json
           feedback?: string | null
           graded_at?: string | null
           id?: string
+          last_saved_at?: string | null
           per_question?: Json
           score?: number | null
           started_at?: string
@@ -579,10 +713,12 @@ export type Database = {
         Update: {
           answers?: Json
           assessment_id?: string
+          attempt?: number
           cheat_events?: Json
           feedback?: string | null
           graded_at?: string | null
           id?: string
+          last_saved_at?: string | null
           per_question?: Json
           score?: number | null
           started_at?: string

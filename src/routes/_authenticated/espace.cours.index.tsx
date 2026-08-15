@@ -376,21 +376,31 @@ function CoursPage() {
                                   </div>
                                 </div>
                               </div>
-                              {!isProf && (
-                                <Button
-                                  size="sm"
-                                  variant={done ? "secondary" : "outline"}
-                                  disabled={savingId === lesson.id}
-                                  onClick={() => void toggleLesson(lesson.id)}
-                                >
-                                  {savingId === lesson.id ? (
-                                    <Loader2 className="animate-spin" />
-                                  ) : (
-                                    <Check />
-                                  )}
-                                  {done ? "Terminée" : "Marquer terminée"}
+                              <div className="flex flex-wrap gap-2">
+                                <Button size="sm" variant="outline" asChild>
+                                  <Link
+                                    to="/espace/seance/$lessonId"
+                                    params={{ lessonId: lesson.id }}
+                                  >
+                                    <PlayCircle /> Ouvrir le parcours
+                                  </Link>
                                 </Button>
-                              )}
+                                {!isProf && (
+                                  <Button
+                                    size="sm"
+                                    variant={done ? "secondary" : "outline"}
+                                    disabled={savingId === lesson.id}
+                                    onClick={() => void toggleLesson(lesson.id)}
+                                  >
+                                    {savingId === lesson.id ? (
+                                      <Loader2 className="animate-spin" />
+                                    ) : (
+                                      <Check />
+                                    )}
+                                    {done ? "Terminée" : "Marquer terminée"}
+                                  </Button>
+                                )}
+                              </div>
                             </div>
                           );
                         })}
