@@ -298,12 +298,15 @@ export default function Classroom3D({
   titreTableau: string;
   cinematique?: boolean;
 }) {
+  const controlsRef = useRef<any>(null);
   const [face, setFace] = useState(0);
-  const [libre, setLibre] = useState(false);
+  const [animation, setAnimation] = useState(false);
+  const [cinema, setCinema] = useState(cinematique);
 
   useEffect(() => {
-    if (cinematique) setLibre(false);
+    setCinema(cinematique);
   }, [cinematique]);
+
 
   const places = useMemo(() => {
     const parRangee = 4;
