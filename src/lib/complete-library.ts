@@ -32,6 +32,11 @@ const exerciceSchema = z.object({
   points: z.number(),
   consigne: z.string(),
   enonce: z.string(),
+  competence: z.string().optional(),
+  correction: z.enum(["auto", "enseignant"]).optional(),
+  feedback_ok: z.string().optional(),
+  feedback_ko: z.string().optional(),
+  illustration: z.string().optional(),
   options: z.array(z.string()).optional(),
   segments: z.array(z.string()).optional(),
   reponse_correcte: z.union([z.string(), z.array(z.string()), z.null()]).optional(),
@@ -76,6 +81,31 @@ const lessonSchema = z.object({
   deroule: z.array(z.string()),
   exercice_ids: z.array(z.string()),
   duree_minutes: z.number(),
+  cours: z
+    .object({
+      introduction: z.string(),
+      explication: z.string(),
+      exemples: z.array(z.string()),
+      trace: z.string(),
+      differenciation: z.array(z.string()),
+    })
+    .optional(),
+  module: z
+    .object({
+      theme: z.string(),
+      objectifs_communication: z.array(z.string()),
+      structures: z.array(z.string()),
+      lexique: z.array(z.string()),
+      projet_ecriture: z.string(),
+      criteres: z.array(z.string()),
+      etude_langue: z.object({
+        grammaire: z.array(z.string()),
+        conjugaison: z.array(z.string()),
+        orthographe: z.array(z.string()),
+        vocabulaire: z.array(z.string()),
+      }),
+    })
+    .optional(),
 });
 
 const questionSchema = z.object({
