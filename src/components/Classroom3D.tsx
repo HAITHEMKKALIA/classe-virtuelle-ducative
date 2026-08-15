@@ -247,6 +247,99 @@ function Salle({ titre }: { titre: string }) {
           </mesh>
         </group>
       </Float>
+      {/* Drapeau tunisien */}
+      <DrapeauTunisien position={[-6.2, 0, -P / 2 + 0.35]} />
+    </group>
+  );
+}
+
+/** Génère la texture du drapeau tunisien (rouge, croissant + étoile rouges dans disque blanc). */
+function creerTextureDrapeauTunisien() {
+  const W = 512;
+  const H = 340;
+  const canvas = document.createElement("canvas");
+  canvas.width = W;
+  canvas.height = H;
+  const ctx = canvas.getContext("2d")!;
+
+  // fond rouge
+  ctx.fillStyle = "#e70013";
+  ctx.fillRect(0, 0, W, H);
+
+  // disque blanc
+  const cx = W / 2;
+  const cy = H / 2;
+  const r = H * 0.35;
+  ctx.fillStyle = "#ffffff";
+  ctx.beginPath();
+  ctx.arc(cx, cy, r, 0, Math.PI * 2);
+  ctx.fill();
+
+  // croissant rouge
+  ctx.fillStyle = "#e70013";
+  ctx.beginPath();
+  ctx.arc(cx - r * 0.13, cy, r * 0.75, 0, Math.PI * 2);
+  ctx.fill();
+
+  // disque blanc pour creuser le croissant
+  ctx.fillStyle = "#ffffff";
+  ctx.beginPath();
+  ctx.arc(cx - r * 0.05, cy, r * 0.62, 0, Math.PI * 2);
+  ctx.fill();
+
+  // étoile rouge à 5 branches
+  ctx.fillStyle = "#e70013";
+  const etoileX = cx + r * 0.32;
+  const etoileY = cy;
+  const etoileR = r * 0.28;
+  ctx.beginPath();
+  for (let i = 0; i < 10; i++) {
+    const angle = (Math.PI * i) / 5 - Math.PI / 2;
+    const rayon = i % 2 === 0 ? etoileR : etoileR * 0.42;
+    ctx.lineTo(etoileX + Math.cos(angle) * rayon, etoileY + Math.sin(angle) * rayon);
+  }
+  ctx.closePath();
+  ctx.fill();
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  return texture;
+}
+
+/** Drapeau tunisien sur hampe avec ondulation animée. */
+function DrapeauTunisien({ position }: { position: [number, number, number] }) {
+  const texture = useMemo(() => creerTextureDrapeauTunisien(), []);
+  const ref = useRef<THREE.Mesh>(null);
+  const geometry = useMemo(() => new THREE.PlaneGeometry(1.8, 1.2, 24, 16), []);
+
+  useFrame(({ clock }) => {
+    if (!ref.current) return;
+    const pos = geometry.attributes['position'] as THREE.BufferAttribute | undefined;
+    if (!pos) return;
+    const t = clock.elapsedTime * 2.5;
+    for (let i = 0; i < pos.count; i++) {
+      const x = pos.getX(i);
+      pos.setZ(i, Math.sin(x * 3 + t) * 0.08 * (x + 0.9));
+    }
+    pos.needsUpdate = true;
+  });
+
+  return (
+    <group position={position}>
+      {/* hampe */}
+      <mesh castShadow position={[0, 1.5, 0]}>
+        <cylinderGeometry args={[0.04, 0.04, 3.2, 12]} />
+        <meshStandardMaterial color="#c0a062" roughness={0.3} metalness={0.6} />
+      </mesh>
+      {/* pommeau doré */}
+      <mesh position={[0, 3.25, 0]} castShadow>
+        <sphereGeometry args={[0.1, 16, 16]} />
+        <meshStandardMaterial color="#fbbf24" roughness={0.2} metalness={0.8} />
+      </mesh>
+      {/* drapeau */}
+      <mesh ref={ref} geometry={geometry} position={[0.94, 2.25, 0]} rotation={[0, -Math.PI / 12, 0]} castShadow>
+        <meshStandardMaterial map={texture} side={THREE.DoubleSide} roughness={0.6} metalness={0.05} />
+      </mesh>
     </group>
   );
 }
