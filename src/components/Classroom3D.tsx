@@ -230,7 +230,7 @@ function Salle({ titre }: { titre: string }) {
           [-0.8, -0.2, 0.4, 0.9].map((x, c) => (
             <mesh key={`${r}-${c}`} position={[x, y, 0.28]} castShadow>
               <boxGeometry args={[0.16, 0.42, 0.12]} />
-              <meshStandardMaterial color={COULEURS[(r * 4 + c) % COULEURS.length]} roughness={0.6} />
+              <meshStandardMaterial color={COULEURS[(r * 4 + c) % COULEURS.length]!} roughness={0.6} />
             </mesh>
           )),
         )}
