@@ -681,6 +681,7 @@ export type Database = {
           assessment_id: string
           attempt: number
           cheat_events: Json
+          deadline_at: string | null
           feedback: string | null
           graded_at: string | null
           id: string
@@ -698,6 +699,7 @@ export type Database = {
           assessment_id: string
           attempt?: number
           cheat_events?: Json
+          deadline_at?: string | null
           feedback?: string | null
           graded_at?: string | null
           id?: string
@@ -715,6 +717,7 @@ export type Database = {
           assessment_id?: string
           attempt?: number
           cheat_events?: Json
+          deadline_at?: string | null
           feedback?: string | null
           graded_at?: string | null
           id?: string
@@ -765,6 +768,18 @@ export type Database = {
         Returns: boolean
       }
       claim_super_admin: { Args: never; Returns: boolean }
+      get_assessment_questions_for_student: {
+        Args: { _assessment_id: string }
+        Returns: {
+          enonce: string
+          id: string
+          image_url: string
+          options: Json
+          ordre: number
+          points: number
+          type: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -782,9 +797,24 @@ export type Database = {
         Returns: boolean
       }
       join_class_by_code: { Args: { _code: string }; Returns: boolean }
+      log_assessment_event: {
+        Args: { _event_type: string; _submission_id: string }
+        Returns: boolean
+      }
       owns_assessment: {
         Args: { _assessment_id: string; _user_id: string }
         Returns: boolean
+      }
+      save_assessment_progress: {
+        Args: { _answers: Json; _submission_id: string; _submit?: boolean }
+        Returns: Json
+      }
+      start_assessment: {
+        Args: { _assessment_id: string }
+        Returns: {
+          remaining_seconds: number
+          submission_id: string
+        }[]
       }
     }
     Enums: {
