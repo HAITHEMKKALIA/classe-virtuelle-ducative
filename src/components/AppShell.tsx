@@ -31,11 +31,13 @@ export function AppShell({ children }: { children: ReactNode }) {
     items.push(
       { to: "/espace/classes", label: "Mes classes", icon: Users },
       { to: "/espace/cours", label: "Cours", icon: BookOpen },
+      { to: "/espace/programme", label: "Programme manuel", icon: FolderOpen },
       { to: "/espace/evaluations", label: "Devoirs & examens", icon: ClipboardList },
     );
   } else {
     items.push(
       { to: "/espace/cours", label: "Mes cours", icon: BookOpen },
+      { to: "/espace/programme", label: "Programme manuel", icon: FolderOpen },
       { to: "/espace/travail", label: "Devoirs & examens", icon: ClipboardList },
       { to: "/espace/resultats", label: "Mes résultats", icon: Trophy },
     );
