@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
+import { ClassroomStage } from "@/components/ClassroomStage";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -391,7 +392,23 @@ export function VirtualClassroom({
         </CardContent>
       </Card>
 
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 font-display text-base">
+            <Video className="size-4" /> Salle de classe virtuelle
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ClassroomStage
+            prof={profPresent}
+            eleves={elevesPresents}
+            titreTableau={etapeCourante?.title ?? session.titre}
+          />
+        </CardContent>
+      </Card>
+
       <div className="grid gap-4 md:grid-cols-2">
+
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 font-display text-base">
