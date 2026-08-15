@@ -166,7 +166,7 @@ for (const niveau of source.levels) {
       illustrations.add(illustration);
       writeFileSync(
         `${OUT}${illustration.replace("/programme/", "")}`,
-        svg(l.title, `${grade}ᵉ année — Module ${mod.number} — ${mod.title}`, matiere),
+        svg({ grade, moduleNo: mod.number, moduleTitle: mod.title, lessonNo: l.day, lessonTitle: l.title }),
       );
       for (const ex of l.exercises) {
         const { options, reponse } = normaliserReponse(ex);
