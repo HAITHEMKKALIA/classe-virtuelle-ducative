@@ -32,7 +32,10 @@ async function chat(body: unknown) {
 }
 
 function extractJson(raw: string) {
-  const cleaned = raw.replace(/```json/gi, "```").split("```").filter(Boolean);
+  const cleaned = raw
+    .replace(/```json/gi, "```")
+    .split("```")
+    .filter(Boolean);
   for (const chunk of [raw, ...cleaned]) {
     const start = chunk.indexOf("{");
     const end = chunk.lastIndexOf("}");
@@ -107,9 +110,7 @@ Réponds UNIQUEMENT en JSON valide :
       consignes: parsed.consignes ?? "",
       questions: (parsed.questions ?? []).map((q) => ({
         type: (["qcm", "court", "texte"].includes(q.type) ? q.type : "court") as
-          | "qcm"
-          | "court"
-          | "texte",
+          "qcm" | "court" | "texte",
         enonce: q.enonce ?? "",
         options: Array.isArray(q.options) ? q.options : [],
         reponse_correcte: q.reponse_correcte ?? "",

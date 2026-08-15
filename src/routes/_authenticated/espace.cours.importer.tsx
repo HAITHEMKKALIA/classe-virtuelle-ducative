@@ -67,7 +67,10 @@ function ImporterPage() {
     if (!user) return;
     const [{ data: cours }, { data: evals }, { data: cls }] = await Promise.all([
       supabase.from("courses").select("titre, niveau, trimestre, class_id").eq("prof_id", user.id),
-      supabase.from("assessments").select("titre, niveau, trimestre, class_id").eq("prof_id", user.id),
+      supabase
+        .from("assessments")
+        .select("titre, niveau, trimestre, class_id")
+        .eq("prof_id", user.id),
       supabase.from("classes").select("id, nom, niveau").eq("prof_id", user.id).order("nom"),
     ]);
     setExistants(
@@ -91,7 +94,9 @@ function ImporterPage() {
     void charger();
     void chargerBibliotheque()
       .then(setBiblio)
-      .catch((e: unknown) => toast.error(e instanceof Error ? e.message : "Bibliothèque illisible."));
+      .catch((e: unknown) =>
+        toast.error(e instanceof Error ? e.message : "Bibliothèque illisible."),
+      );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.id]);
 
@@ -217,10 +222,7 @@ function ImporterPage() {
   const cleCatalogue = (l: Lecon) =>
     user ? cleImport(user.id, cible, l.niveau, l.trimestre, l.titre) : "";
   const selectionCatalogue = useMemo(
-    () =>
-      CATALOGUE.filter(
-        (l) => l.niveau === Number(niveau) && l.trimestre === Number(trimestre),
-      ),
+    () => CATALOGUE.filter((l) => l.niveau === Number(niveau) && l.trimestre === Number(trimestre)),
     [niveau, trimestre],
   );
 
@@ -285,7 +287,10 @@ function ImporterPage() {
       <Card className="mb-6 border-amber-500/40 bg-amber-500/5">
         <CardContent className="flex gap-3 p-4 text-sm">
           <ShieldAlert className="mt-0.5 size-4 shrink-0" />
-          <p>{AVERTISSEMENT_VALIDATION} Contenu original : aucun manuel protégé du CNP n'est reproduit.</p>
+          <p>
+            {AVERTISSEMENT_VALIDATION} Contenu original : aucun manuel protégé du CNP n'est
+            reproduit.
+          </p>
         </CardContent>
       </Card>
 
@@ -314,7 +319,10 @@ function ImporterPage() {
             ))}
           </TabsList>
         </Tabs>
-        <Select value={classId || "aucune"} onValueChange={(v) => setClassId(v === "aucune" ? "" : v)}>
+        <Select
+          value={classId || "aucune"}
+          onValueChange={(v) => setClassId(v === "aucune" ? "" : v)}
+        >
           <SelectTrigger className="w-56">
             <SelectValue placeholder="Classe de destination" />
           </SelectTrigger>
@@ -332,7 +340,11 @@ function ImporterPage() {
       {source === "bibliotheque" ? (
         <>
           <div className="mb-6 flex flex-wrap gap-3">
-            <Button variant="outline" disabled={busy} onClick={() => void importerLecons(leconsFiltrees)}>
+            <Button
+              variant="outline"
+              disabled={busy}
+              onClick={() => void importerLecons(leconsFiltrees)}
+            >
               Importer ce trimestre ({leconsFiltrees.length} leçons)
             </Button>
             <Button variant="outline" disabled={busy} onClick={() => void importerEvaluations()}>
@@ -367,7 +379,11 @@ function ImporterPage() {
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="secondary">{matiereLabel(l.matiere)}</Badge>
                       <Badge variant="outline">Module {l.module_no}</Badge>
-                      {dedans ? <Badge>Importée</Badge> : <Badge variant="outline">À importer</Badge>}
+                      {dedans ? (
+                        <Badge>Importée</Badge>
+                      ) : (
+                        <Badge variant="outline">À importer</Badge>
+                      )}
                     </div>
                     <h2 className="mt-3 font-display text-lg font-semibold">{l.titre}</h2>
                     <p className="mt-1 text-xs text-muted-foreground">
@@ -425,7 +441,11 @@ function ImporterPage() {
                   <CardContent className="p-5">
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="secondary">{matiereLabel(l.matiere)}</Badge>
-                      {dedans ? <Badge>Importé</Badge> : <Badge variant="outline">À importer</Badge>}
+                      {dedans ? (
+                        <Badge>Importé</Badge>
+                      ) : (
+                        <Badge variant="outline">À importer</Badge>
+                      )}
                     </div>
                     <h2 className="mt-3 font-display text-lg font-semibold">{l.titre}</h2>
                     <p className="mt-1 text-xs text-muted-foreground">{l.module}</p>

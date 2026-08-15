@@ -152,7 +152,10 @@ export async function chargerBibliotheque(): Promise<Bibliotheque> {
   const dicteeIds = new Set(lib.dictees.map((d) => d.id));
 
   for (const l of lib.lessons) {
-    if (!l.illustration.startsWith("/programme/assets/illustrations/") || !l.illustration.endsWith(".svg"))
+    if (
+      !l.illustration.startsWith("/programme/assets/illustrations/") ||
+      !l.illustration.endsWith(".svg")
+    )
       avertissements.push(`Illustration invalide pour ${l.id}.`);
     for (const id of l.exercice_ids)
       if (!exoIds.has(id)) avertissements.push(`Exercice manquant ${id} (leçon ${l.id}).`);
@@ -193,16 +196,33 @@ export function contenuBibliotheque(
     "## Déroulé de la séance",
     ...lecon.deroule.map((d, i) => `${i + 1}. ${d}`),
     ...(texte
-      ? ["", `## Support de lecture — ${texte.titre} (${texte.genre})`, "", texte.contenu, "",
-         "### Questions de compréhension", ...texte.questions_comprehension.map((q, i) => `${i + 1}. ${q}`)]
+      ? [
+          "",
+          `## Support de lecture — ${texte.titre} (${texte.genre})`,
+          "",
+          texte.contenu,
+          "",
+          "### Questions de compréhension",
+          ...texte.questions_comprehension.map((q, i) => `${i + 1}. ${q}`),
+        ]
       : []),
     ...(dictee
-      ? ["", `## ${dictee.titre}`, `Mots à préparer : ${dictee.mots_a_preparer.join(", ")}`, "",
-         dictee.texte, "", `Vigilance : ${dictee.points_de_vigilance.join(" ; ")}`]
+      ? [
+          "",
+          `## ${dictee.titre}`,
+          `Mots à préparer : ${dictee.mots_a_preparer.join(", ")}`,
+          "",
+          dictee.texte,
+          "",
+          `Vigilance : ${dictee.points_de_vigilance.join(" ; ")}`,
+        ]
       : []),
     "",
     "## Exercices",
-    ...exos.map((e, i) => `${i + 1}. **${e.consigne}** ${e.enonce}${e.options?.length ? `\n   - ${e.options.join("\n   - ")}` : ""}`),
+    ...exos.map(
+      (e, i) =>
+        `${i + 1}. **${e.consigne}** ${e.enonce}${e.options?.length ? `\n   - ${e.options.join("\n   - ")}` : ""}`,
+    ),
     "",
     "## Trace écrite",
     `Recopie la règle de la séance et illustre-la par deux exemples liés au thème « ${lecon.module_titre} ».`,
@@ -217,5 +237,7 @@ export function cleImport(
   trimestre: number,
   titre: string,
 ): string {
-  return [profId, classId ?? "sans-classe", niveau, trimestre, titre.trim().toLowerCase()].join("|");
+  return [profId, classId ?? "sans-classe", niveau, trimestre, titre.trim().toLowerCase()].join(
+    "|",
+  );
 }

@@ -248,10 +248,9 @@ function PasserEval() {
       toast.error("L'échéance de cette épreuve est dépassée.");
       return;
     }
-    const { data: qs, error: qErr } = await supabase.rpc(
-      "get_assessment_questions_for_student",
-      { _assessment_id: id },
-    );
+    const { data: qs, error: qErr } = await supabase.rpc("get_assessment_questions_for_student", {
+      _assessment_id: id,
+    });
     setBusy(false);
     if (qErr) {
       toast.error(qErr.message);

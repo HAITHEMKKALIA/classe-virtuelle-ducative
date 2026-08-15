@@ -27,7 +27,10 @@ export const fichierSchema = z
     dataUrl: z
       .string()
       .startsWith("data:")
-      .max(Math.ceil((MAX_FICHIER_OCTETS * 4) / 3) + 1024, "Fichier trop volumineux (8 Mo maximum)."),
+      .max(
+        Math.ceil((MAX_FICHIER_OCTETS * 4) / 3) + 1024,
+        "Fichier trop volumineux (8 Mo maximum).",
+      ),
   })
   .nullable()
   .optional();

@@ -12,5 +12,10 @@ export const generateLessonPath = createServerFn({ method: "POST" })
   )
   .handler(async ({ data, context }) => {
     await assertEnseignant(context);
-    return buildLessonPath(context.supabase, context.userId, data.lessonId, data.regenerate === true);
+    return buildLessonPath(
+      context.supabase,
+      context.userId,
+      data.lessonId,
+      data.regenerate === true,
+    );
   });
