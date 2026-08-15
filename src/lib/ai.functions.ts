@@ -1,5 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
+import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { assertEnseignant, fichierSchema } from "@/lib/roles.server";
 
 const GATEWAY = "https://ai.gateway.lovable.dev/v1/chat/completions";
 
@@ -30,7 +32,10 @@ async function chat(body: unknown) {
 }
 
 function extractJson(raw: string) {
-  const cleaned = raw.replace(/```json/gi, "```").split("```").filter(Boolean);
+  const cleaned = raw
+    .replace(/```json/gi, "```")
+    .split("```")
+    .filter(Boolean);
   for (const chunk of [raw, ...cleaned]) {
     const start = chunk.indexOf("{");
     const end = chunk.lastIndexOf("}");
@@ -55,20 +60,23 @@ export type GeneratedQuestion = {
 
 export const generateAssessment = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator(
-    (d: {
-      niveau: number;
-      trimestre: number;
-      matiere: string;
-      type: string;
-      nombre: number;
-      consigne?: string;
-      sourceText?: string;
-      sourceFile?: { filename: string; dataUrl: string } | null;
-      withImages?: boolean;
-    }) => d,
+  .inputValidator((d: unknown) =>
+    z
+      .object({
+        niveau: z.number().int().min(1).max(9),
+        trimestre: z.number().int().min(1).max(3),
+        matiere: z.string().min(1).max(60),
+        type: z.string().min(1).max(30),
+        nombre: z.number().int().min(1).max(30),
+        consigne: z.string().max(4000).optional(),
+        sourceText: z.string().max(20000).optional(),
+        sourceFile: fichierSchema,
+        withImages: z.boolean().optional(),
+      })
+      .parse(d),
   )
-  .handler(async ({ data }) => {
+  .handler(async ({ data, context }) => {
+    await assertEnseignant(context);
     const content: Block[] = [
       {
         type: "text",
@@ -102,9 +110,7 @@ Réponds UNIQUEMENT en JSON valide :
       consignes: parsed.consignes ?? "",
       questions: (parsed.questions ?? []).map((q) => ({
         type: (["qcm", "court", "texte"].includes(q.type) ? q.type : "court") as
-          | "qcm"
-          | "court"
-          | "texte",
+          "qcm" | "court" | "texte",
         enonce: q.enonce ?? "",
         options: Array.isArray(q.options) ? q.options : [],
         reponse_correcte: q.reponse_correcte ?? "",
@@ -116,17 +122,20 @@ Réponds UNIQUEMENT en JSON valide :
 
 export const generateCourse = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator(
-    (d: {
-      niveau: number;
-      trimestre: number;
-      matiere: string;
-      titre: string;
-      notes?: string;
-      sourceFile?: { filename: string; dataUrl: string } | null;
-    }) => d,
+  .inputValidator((d: unknown) =>
+    z
+      .object({
+        niveau: z.number().int().min(1).max(9),
+        trimestre: z.number().int().min(1).max(3),
+        matiere: z.string().min(1).max(60),
+        titre: z.string().min(1).max(200),
+        notes: z.string().max(4000).optional(),
+        sourceFile: fichierSchema,
+      })
+      .parse(d),
   )
-  .handler(async ({ data }) => {
+  .handler(async ({ data, context }) => {
+    await assertEnseignant(context);
     const content: Block[] = [
       {
         type: "text",
@@ -160,8 +169,9 @@ Réponds UNIQUEMENT en JSON : {"resume":"2 phrases","contenu":"markdown complet"
 
 export const generateImage = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: { prompt: string }) => d)
-  .handler(async ({ data }) => {
+  .inputValidator((d: unknown) => z.object({ prompt: z.string().min(3).max(1000) }).parse(d))
+  .handler(async ({ data, context }) => {
+    await assertEnseignant(context);
     const json = await chat({
       model: "google/gemini-3.1-flash-image",
       messages: [
@@ -179,10 +189,18 @@ export const generateImage = createServerFn({ method: "POST" })
 
 export const suggestGrading = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator(
-    (d: { enonce: string; attendu?: string; reponse: string; points: number }) => d,
+  .inputValidator((d: unknown) =>
+    z
+      .object({
+        enonce: z.string().min(1).max(4000),
+        attendu: z.string().max(4000).optional(),
+        reponse: z.string().max(10000),
+        points: z.number().min(0).max(20),
+      })
+      .parse(d),
   )
-  .handler(async ({ data }) => {
+  .handler(async ({ data, context }) => {
+    await assertEnseignant(context);
     const json = await chat({
       model: "google/gemini-3.5-flash",
       messages: [
