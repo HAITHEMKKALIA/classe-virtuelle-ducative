@@ -5,6 +5,8 @@ import { AppShell, PageHeader } from "@/components/AppShell";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { NIVEAUX, TRIMESTRES, matiereLabel } from "@/lib/programme";
+import { findModuleDetail } from "@/lib/module-details";
+
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
