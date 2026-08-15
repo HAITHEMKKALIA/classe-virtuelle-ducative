@@ -2,7 +2,6 @@ import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
   ContactShadows,
-  Environment,
   Float,
   Html,
   OrbitControls,
@@ -158,7 +157,7 @@ function Salle({ titre }: { titre: string }) {
       {/* Plafond */}
       <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, H, 0]}>
         <planeGeometry args={[L, P]} />
-        <meshStandardMaterial color="#ffffff" roughness={1} side={THREE.DoubleSide} />
+        <meshStandardMaterial color="#ffffff" roughness={1} />
       </mesh>
       {/* Néons */}
       {[-2.5, 2.5].map((z) => (
@@ -170,19 +169,19 @@ function Salle({ titre }: { titre: string }) {
       {/* 4 murs */}
       <mesh position={[0, H / 2, -P / 2]} receiveShadow>
         <planeGeometry args={[L, H]} />
-        <meshStandardMaterial color="#f4efe4" roughness={1} side={THREE.DoubleSide} />
+        <meshStandardMaterial color="#f4efe4" roughness={1} />
       </mesh>
       <mesh position={[0, H / 2, P / 2]} rotation={[0, Math.PI, 0]} receiveShadow>
         <planeGeometry args={[L, H]} />
-        <meshStandardMaterial color="#eee8dc" roughness={1} side={THREE.DoubleSide} />
+        <meshStandardMaterial color="#eee8dc" roughness={1} />
       </mesh>
       <mesh position={[-L / 2, H / 2, 0]} rotation={[0, Math.PI / 2, 0]} receiveShadow>
         <planeGeometry args={[P, H]} />
-        <meshStandardMaterial color="#efe9dd" roughness={1} side={THREE.DoubleSide} />
+        <meshStandardMaterial color="#efe9dd" roughness={1} />
       </mesh>
       <mesh position={[L / 2, H / 2, 0]} rotation={[0, -Math.PI / 2, 0]} receiveShadow>
         <planeGeometry args={[P, H]} />
-        <meshStandardMaterial color="#efe9dd" roughness={1} side={THREE.DoubleSide} />
+        <meshStandardMaterial color="#efe9dd" roughness={1} />
       </mesh>
       {/* Fenêtres sur le mur latéral droit */}
       {[-2.5, 1.5].map((z) => (
@@ -266,7 +265,7 @@ function CameraRig({
   useFrame((state, delta) => {
     if (libre) return;
     const cam = state.camera;
-    const rayon = 11;
+    const rayon = 6.5;
     const angle = cinematique
       ? angleCible + Math.sin(state.clock.elapsedTime * 0.12) * 0.35
       : angleCible;
@@ -314,7 +313,7 @@ export default function Classroom3D({
 
   return (
     <div className="relative h-[420px] w-full overflow-hidden rounded-2xl border border-border bg-gradient-to-b from-sky-100 to-background">
-      <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 3.6, 10], fov: 45 }}>
+      <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 3.4, 6.5], fov: 55 }}>
         <Suspense fallback={null}>
           <ambientLight intensity={0.55} />
           <hemisphereLight args={["#ffffff", "#cbb99a", 0.6]} />
@@ -325,7 +324,6 @@ export default function Classroom3D({
             shadow-mapSize={[2048, 2048]}
           />
           <spotLight position={[0, 4, -3]} angle={0.8} penumbra={0.9} intensity={1.2} castShadow />
-          <Environment preset="apartment" />
           <Salle titre={titreTableau} />
           {prof && <Avatar3D p={prof} position={[-2.9, 0, -3.6]} prof rotationY={Math.PI} />}
           {places.map(({ e, pos }, i) => (
@@ -339,8 +337,8 @@ export default function Classroom3D({
           {libre && (
             <OrbitControls
               enablePan={false}
-              minDistance={4}
-              maxDistance={18}
+              minDistance={3}
+              maxDistance={12}
               maxPolarAngle={Math.PI / 2.05}
               target={[0, 1.3, -1]}
             />
