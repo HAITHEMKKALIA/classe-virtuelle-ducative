@@ -45,8 +45,7 @@ function Avatar({ p, taille = "sm" }: { p: Participant; taille?: "sm" | "lg" }) 
   );
 }
 
-/** Salle de classe virtuelle : le professeur au tableau et les élèves présents à leur place. */
-export function ClassroomStage({
+function Stage2D({
   prof,
   eleves,
   titreTableau,
@@ -57,6 +56,7 @@ export function ClassroomStage({
 }) {
   return (
     <div className="overflow-hidden rounded-2xl border border-border bg-gradient-to-b from-muted/60 to-background p-5">
+
       {/* Tableau et bureau du professeur */}
       <div className="mx-auto max-w-xl">
         <div className="rounded-xl border-4 border-foreground/15 bg-foreground/85 p-4 text-center shadow-inner">
