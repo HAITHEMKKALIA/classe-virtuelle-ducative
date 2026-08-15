@@ -3,7 +3,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { AppShell, PageHeader } from "@/components/AppShell";
 import { supabase } from "@/integrations/supabase/client";
-import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,6 +13,23 @@ import { AlertTriangle, Clock, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/espace/passer/$id")({
   component: PasserEval,
+  head: () => ({
+    meta: [
+      { title: "Épreuve surveillée — Ma Classe de Français TN" },
+      {
+        name: "description",
+        content:
+          "Passer un devoir ou un examen de français en mode surveillé : minuteur serveur, autosauvegarde des réponses et journal d'incidents.",
+      },
+      { property: "og:title", content: "Épreuve surveillée de français" },
+      {
+        property: "og:description",
+        content: "Minuteur serveur, autosauvegarde et reprise avant l'échéance.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
 });
 
 type Question = {
@@ -33,9 +49,17 @@ type AntiCheat = {
   block_screenshot?: boolean;
 };
 
+type EventType =
+  | "sortie_page"
+  | "copie"
+  | "capture_ecran"
+  | "raccourci_interdit"
+  | "plein_ecran_quitte"
+  | "deconnexion"
+  | "reconnexion";
+
 function PasserEval() {
   const { id } = Route.useParams();
-  const { user } = useAuth();
   const navigate = useNavigate();
 
   const [assessment, setAssessment] = useState<{
@@ -49,64 +73,66 @@ function PasserEval() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [submissionId, setSubmissionId] = useState("");
   const [started, setStarted] = useState(false);
+  const [busy, setBusy] = useState(false);
   const [remaining, setRemaining] = useState(0);
-  const [incidents, setIncidents] = useState<{ type: string; at: string }[]>([]);
+  const [incidents, setIncidents] = useState(0);
+  const [savedAt, setSavedAt] = useState<string | null>(null);
   const submittedRef = useRef(false);
-  const incidentsRef = useRef<{ type: string; at: string }[]>([]);
   const answersRef = useRef<Record<string, string>>({});
+  const dirtyRef = useRef(false);
+  const submissionRef = useRef("");
 
   answersRef.current = answers;
-  incidentsRef.current = incidents;
+  submissionRef.current = submissionId;
 
   const ac = assessment?.anti_cheat ?? {};
 
   useEffect(() => {
     void (async () => {
-      const [{ data: a }, { data: q }] = await Promise.all([
-        supabase
-          .from("assessments")
-          .select("titre, type, consignes, duree_minutes, anti_cheat")
-          .eq("id", id)
-          .maybeSingle(),
-        supabase.from("questions").select("*").eq("assessment_id", id).order("ordre"),
-      ]);
-      setAssessment(a as never);
-      setQuestions((q ?? []) as unknown as Question[]);
-      setRemaining(((a as { duree_minutes?: number } | null)?.duree_minutes ?? 30) * 60);
+      const { data } = await supabase
+        .from("assessments")
+        .select("titre, type, consignes, duree_minutes, anti_cheat")
+        .eq("id", id)
+        .maybeSingle();
+      setAssessment(data as never);
     })();
   }, [id]);
 
   const rendre = useCallback(
     async (auto = false) => {
-      if (submittedRef.current || !submissionId) return;
+      const sid = submissionRef.current;
+      if (submittedRef.current || !sid) return;
       submittedRef.current = true;
-      await supabase
-        .from("submissions")
-        .update({
-          answers: answersRef.current,
-          cheat_events: incidentsRef.current,
-          status: "submitted",
-          submitted_at: new Date().toISOString(),
-        })
-        .eq("id", submissionId);
+      const { error } = await supabase.rpc("save_assessment_progress", {
+        _submission_id: sid,
+        _answers: answersRef.current,
+        _submit: true,
+      });
       if (document.fullscreenElement) void document.exitFullscreen();
+      if (error) {
+        submittedRef.current = false;
+        toast.error(error.message);
+        return;
+      }
       toast.success(auto ? "Temps écoulé : copie rendue." : "Copie rendue à votre professeur.");
       void navigate({ to: "/espace/resultats" });
     },
-    [submissionId, navigate],
+    [navigate],
   );
 
   const signaler = useCallback(
-    (type: string) => {
-      setIncidents((l) => {
-        const next = [...l, { type, at: new Date().toISOString() }];
+    (type: EventType) => {
+      const sid = submissionRef.current;
+      if (!sid) return;
+      void supabase.rpc("log_assessment_event", { _submission_id: sid, _event_type: type });
+      setIncidents((n) => {
+        const next = n + 1;
         const max = ac.max_tab_switch ?? 3;
-        const sorties = next.filter((x) => x.type === "sortie_page").length;
-        if (sorties > max) {
+        if (type === "sortie_page" && next > max) {
           toast.error("Trop de sorties de la page : la copie est rendue.");
           setTimeout(() => void rendre(true), 200);
         } else {
-          toast.warning(`Action interdite détectée (${type}).`);
+          toast.warning(`Action signalée à votre professeur (${type}).`);
         }
         return next;
       });
@@ -128,6 +154,9 @@ function PasserEval() {
     const onContext = (e: Event) => {
       if (ac.block_copy) e.preventDefault();
     };
+    const onFullscreen = () => {
+      if (ac.fullscreen && !document.fullscreenElement) signaler("plein_ecran_quitte");
+    };
     const onKey = (e: KeyboardEvent) => {
       const k = e.key.toLowerCase();
       if (e.key === "PrintScreen" || (e.metaKey && e.shiftKey && ["3", "4", "5"].includes(k))) {
@@ -144,6 +173,7 @@ function PasserEval() {
     document.addEventListener("cut", onCopy);
     document.addEventListener("paste", onCopy);
     document.addEventListener("contextmenu", onContext);
+    document.addEventListener("fullscreenchange", onFullscreen);
     document.addEventListener("keydown", onKey);
     return () => {
       document.removeEventListener("visibilitychange", onVisible);
@@ -151,10 +181,12 @@ function PasserEval() {
       document.removeEventListener("cut", onCopy);
       document.removeEventListener("paste", onCopy);
       document.removeEventListener("contextmenu", onContext);
+      document.removeEventListener("fullscreenchange", onFullscreen);
       document.removeEventListener("keydown", onKey);
     };
-  }, [started, ac.block_copy, signaler]);
+  }, [started, ac.block_copy, ac.fullscreen, signaler]);
 
+  // Minuteur local, resynchronisé par le serveur à chaque autosauvegarde.
   useEffect(() => {
     if (!started) return;
     const t = setInterval(() => {
@@ -170,32 +202,70 @@ function PasserEval() {
     return () => clearInterval(t);
   }, [started, rendre]);
 
+  // Autosauvegarde serveur toutes les 15 secondes.
+  useEffect(() => {
+    if (!started) return;
+    const t = setInterval(() => {
+      if (!dirtyRef.current || submittedRef.current) return;
+      dirtyRef.current = false;
+      void (async () => {
+        const { data, error } = await supabase.rpc("save_assessment_progress", {
+          _submission_id: submissionRef.current,
+          _answers: answersRef.current,
+          _submit: false,
+        });
+        if (error) return;
+        const res = data as { submitted: boolean; remaining_seconds: number } | null;
+        if (!res) return;
+        setRemaining(res.remaining_seconds);
+        setSavedAt(new Date().toLocaleTimeString("fr-FR", { timeZone: "Africa/Tunis" }));
+        if (res.submitted) {
+          submittedRef.current = true;
+          toast.info("Échéance atteinte : votre copie a été rendue automatiquement.");
+          void navigate({ to: "/espace/resultats" });
+        }
+      })();
+    }, 15000);
+    return () => clearInterval(t);
+  }, [started, navigate]);
+
+  const majReponse = (qid: string, valeur: string) => {
+    dirtyRef.current = true;
+    setAnswers((a) => ({ ...a, [qid]: valeur }));
+  };
+
   const commencer = async () => {
-    if (!user) return;
-    const { data: existing } = await supabase
-      .from("submissions")
-      .select("id, status")
-      .eq("assessment_id", id)
-      .eq("student_id", user.id)
-      .maybeSingle();
-    let sid = existing?.id ?? "";
-    if (existing && existing.status !== "in_progress") {
-      toast.error("Vous avez déjà rendu cette copie.");
+    setBusy(true);
+    const { data, error } = await supabase.rpc("start_assessment", { _assessment_id: id });
+    const row = (data as { submission_id: string; remaining_seconds: number }[] | null)?.[0];
+    if (error || !row) {
+      setBusy(false);
+      toast.error(error?.message ?? "Épreuve indisponible.");
       return;
     }
-    if (!sid) {
-      const { data, error } = await supabase
-        .from("submissions")
-        .insert({ assessment_id: id, student_id: user.id, status: "in_progress" })
-        .select("id")
-        .maybeSingle();
-      if (error || !data) {
-        toast.error(error?.message ?? "Impossible de démarrer.");
-        return;
-      }
-      sid = data.id;
+    if (row.remaining_seconds <= 0) {
+      setBusy(false);
+      toast.error("L'échéance de cette épreuve est dépassée.");
+      return;
     }
-    setSubmissionId(sid);
+    const { data: qs, error: qErr } = await supabase.rpc(
+      "get_assessment_questions_for_student",
+      { _assessment_id: id },
+    );
+    setBusy(false);
+    if (qErr) {
+      toast.error(qErr.message);
+      return;
+    }
+    setSubmissionId(row.submission_id);
+    submissionRef.current = row.submission_id;
+    setRemaining(row.remaining_seconds);
+    setQuestions(
+      ((qs ?? []) as Question[]).map((q) => ({
+        ...q,
+        options: Array.isArray(q.options) ? q.options : [],
+      })),
+    );
     if (ac.fullscreen) {
       try {
         await document.documentElement.requestFullscreen();
@@ -218,19 +288,21 @@ function PasserEval() {
             {assessment?.consignes && <p>{assessment.consignes}</p>}
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex gap-2">
-                <Clock className="size-4" /> Durée : {assessment?.duree_minutes} minutes, minuteur
-                automatique.
+                <Clock className="size-4" /> Durée : {assessment?.duree_minutes} minutes. L'échéance
+                est calculée par le serveur ; la reprise reste possible avant l'échéance.
               </li>
               <li className="flex gap-2">
                 <ShieldCheck className="size-4" /> Mode surveillé : plein écran, copie et clic droit
-                bloqués.
+                bloqués. Vos réponses sont sauvegardées automatiquement.
               </li>
               <li className="flex gap-2">
                 <AlertTriangle className="size-4" /> Les sorties de page et tentatives de capture
-                d'écran sont enregistrées.
+                d'écran sont signalées à votre professeur, à titre indicatif.
               </li>
             </ul>
-            <Button onClick={commencer}>Commencer l'épreuve</Button>
+            <Button onClick={() => void commencer()} disabled={busy}>
+              Commencer l'épreuve
+            </Button>
           </CardContent>
         </Card>
       </AppShell>
@@ -239,25 +311,25 @@ function PasserEval() {
 
   return (
     <div className="min-h-screen bg-background select-none">
-      <header className="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-card px-5 py-3">
+      <header className="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-2 border-b border-border bg-card px-4 py-3">
         <div>
           <p className="font-display font-semibold">{assessment?.titre}</p>
-          <p className="text-xs text-muted-foreground">Mode surveillé actif</p>
+          <p className="text-xs text-muted-foreground">
+            Mode surveillé actif{savedAt ? ` — enregistré à ${savedAt}` : ""}
+          </p>
         </div>
         <div className="flex items-center gap-3">
-          {incidents.length > 0 && (
-            <Badge variant="destructive">{incidents.length} incident(s)</Badge>
-          )}
+          {incidents > 0 && <Badge variant="destructive">{incidents} incident(s)</Badge>}
           <Badge variant="secondary" className="font-mono text-base">
             {mm}:{ss}
           </Badge>
-          <Button size="sm" onClick={() => rendre(false)}>
+          <Button size="sm" onClick={() => void rendre(false)}>
             Rendre ma copie
           </Button>
         </div>
       </header>
 
-      <main className="mx-auto max-w-3xl space-y-4 p-5">
+      <main className="mx-auto max-w-3xl space-y-4 p-4">
         {questions.map((q) => (
           <Card key={q.id}>
             <CardContent className="space-y-3 p-5">
@@ -280,7 +352,7 @@ function PasserEval() {
                         type="radio"
                         name={q.id}
                         checked={answers[q.id] === o}
-                        onChange={() => setAnswers((a) => ({ ...a, [q.id]: o }))}
+                        onChange={() => majReponse(q.id, o)}
                       />
                       {o}
                     </label>
@@ -290,18 +362,18 @@ function PasserEval() {
                 <Textarea
                   className="min-h-40"
                   value={answers[q.id] ?? ""}
-                  onChange={(e) => setAnswers((a) => ({ ...a, [q.id]: e.target.value }))}
+                  onChange={(e) => majReponse(q.id, e.target.value)}
                 />
               ) : (
                 <Input
                   value={answers[q.id] ?? ""}
-                  onChange={(e) => setAnswers((a) => ({ ...a, [q.id]: e.target.value }))}
+                  onChange={(e) => majReponse(q.id, e.target.value)}
                 />
               )}
             </CardContent>
           </Card>
         ))}
-        <Button className="w-full" onClick={() => rendre(false)}>
+        <Button className="w-full" onClick={() => void rendre(false)}>
           Rendre ma copie
         </Button>
       </main>
