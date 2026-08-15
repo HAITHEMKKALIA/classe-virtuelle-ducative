@@ -2,7 +2,6 @@ import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
   ContactShadows,
-  Environment,
   Float,
   Html,
   OrbitControls,
@@ -325,7 +324,6 @@ export default function Classroom3D({
             shadow-mapSize={[2048, 2048]}
           />
           <spotLight position={[0, 4, -3]} angle={0.8} penumbra={0.9} intensity={1.2} castShadow />
-          <Environment preset="apartment" />
           <Salle titre={titreTableau} />
           {prof && <Avatar3D p={prof} position={[-2.9, 0, -3.6]} prof rotationY={Math.PI} />}
           {places.map(({ e, pos }, i) => (
