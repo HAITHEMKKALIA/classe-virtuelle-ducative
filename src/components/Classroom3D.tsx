@@ -265,7 +265,7 @@ function CameraRig({
   useFrame((state, delta) => {
     if (libre) return;
     const cam = state.camera;
-    const rayon = 11;
+    const rayon = 6.5;
     const angle = cinematique
       ? angleCible + Math.sin(state.clock.elapsedTime * 0.12) * 0.35
       : angleCible;
@@ -313,7 +313,7 @@ export default function Classroom3D({
 
   return (
     <div className="relative h-[420px] w-full overflow-hidden rounded-2xl border border-border bg-gradient-to-b from-sky-100 to-background">
-      <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 3.6, 10], fov: 45 }}>
+      <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 3.4, 6.5], fov: 55 }}>
         <Suspense fallback={null}>
           <ambientLight intensity={0.55} />
           <hemisphereLight args={["#ffffff", "#cbb99a", 0.6]} />
@@ -337,8 +337,8 @@ export default function Classroom3D({
           {libre && (
             <OrbitControls
               enablePan={false}
-              minDistance={4}
-              maxDistance={18}
+              minDistance={3}
+              maxDistance={12}
               maxPolarAngle={Math.PI / 2.05}
               target={[0, 1.3, -1]}
             />
