@@ -131,24 +131,39 @@ export type Database = {
       }
       class_messages: {
         Row: {
+          attachment_mime: string | null
+          attachment_name: string | null
+          attachment_path: string | null
           class_id: string
           content: string
           created_at: string
           id: string
+          kind: string
+          reply_to: string | null
           sender_id: string
         }
         Insert: {
+          attachment_mime?: string | null
+          attachment_name?: string | null
+          attachment_path?: string | null
           class_id: string
           content: string
           created_at?: string
           id?: string
+          kind?: string
+          reply_to?: string | null
           sender_id: string
         }
         Update: {
+          attachment_mime?: string | null
+          attachment_name?: string | null
+          attachment_path?: string | null
           class_id?: string
           content?: string
           created_at?: string
           id?: string
+          kind?: string
+          reply_to?: string | null
           sender_id?: string
         }
         Relationships: [
@@ -157,6 +172,13 @@ export type Database = {
             columns: ["class_id"]
             isOneToOne: false
             referencedRelation: "classes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "class_messages_reply_to_fkey"
+            columns: ["reply_to"]
+            isOneToOne: false
+            referencedRelation: "class_messages"
             referencedColumns: ["id"]
           },
         ]
@@ -576,6 +598,123 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "lesson_steps_lesson_id_fkey"
+            columns: ["lesson_id"]
+            isOneToOne: false
+            referencedRelation: "curriculum_lessons"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      live_attendance: {
+        Row: {
+          created_at: string
+          exits: number
+          id: string
+          joined_at: string
+          last_seen_at: string
+          left_at: string | null
+          present: boolean
+          session_id: string
+          student_id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          exits?: number
+          id?: string
+          joined_at?: string
+          last_seen_at?: string
+          left_at?: string | null
+          present?: boolean
+          session_id: string
+          student_id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          exits?: number
+          id?: string
+          joined_at?: string
+          last_seen_at?: string
+          left_at?: string | null
+          present?: boolean
+          session_id?: string
+          student_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "live_attendance_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "live_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      live_sessions: {
+        Row: {
+          active: boolean
+          activity: Json
+          class_id: string
+          course_id: string | null
+          created_at: string
+          current_step: number
+          ended_at: string | null
+          id: string
+          lesson_id: string | null
+          prof_id: string
+          started_at: string
+          titre: string
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          activity?: Json
+          class_id: string
+          course_id?: string | null
+          created_at?: string
+          current_step?: number
+          ended_at?: string | null
+          id?: string
+          lesson_id?: string | null
+          prof_id: string
+          started_at?: string
+          titre?: string
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          activity?: Json
+          class_id?: string
+          course_id?: string | null
+          created_at?: string
+          current_step?: number
+          ended_at?: string | null
+          id?: string
+          lesson_id?: string | null
+          prof_id?: string
+          started_at?: string
+          titre?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "live_sessions_class_id_fkey"
+            columns: ["class_id"]
+            isOneToOne: false
+            referencedRelation: "classes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "live_sessions_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "live_sessions_lesson_id_fkey"
             columns: ["lesson_id"]
             isOneToOne: false
             referencedRelation: "curriculum_lessons"
