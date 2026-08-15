@@ -1,13 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Production écrite - entraînement">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#0d3b3b"/><stop offset="100%" stop-color="#2dd4bf" stop-opacity="0.85"/>
-  </linearGradient></defs>
-  <rect width="800" height="500" fill="url(#g)"/>
-  <circle cx="660" cy="90" r="120" fill="#ffffff" opacity="0.08"/>
-  <circle cx="120" cy="430" r="150" fill="#ffffff" opacity="0.06"/>
-  <rect x="56" y="330" width="180" height="10" rx="5" fill="#2dd4bf"/>
-  <text x="56" y="180" fill="#ffffff" font-family="Georgia, serif" font-size="46" font-weight="700">Production écrite - entraînement</text>
-  
-  <text x="56" y="300" fill="#ffffff" opacity="0.85" font-family="Helvetica, Arial, sans-serif" font-size="24">6ᵉ année — Module 3 — Accepter les autres</text>
-  <text x="56" y="420" fill="#ffffff" opacity="0.7" font-family="Helvetica, Arial, sans-serif" font-size="20">Ma Classe de Français TN — contenu original</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Illustration du module 3, leçon 4</title>
+  <desc id="desc">Carte éducative originale pour Accepter les autres : Production écrite - entraînement</desc>
+  <rect width="1200" height="675" rx="48" fill="#FDEBDD"/>
+  <circle cx="1030" cy="80" r="210" fill="#B4531F" opacity=".10"/>
+  <circle cx="110" cy="620" r="190" fill="#B4531F" opacity=".08"/>
+  <rect x="65" y="55" width="245" height="55" rx="27" fill="#B4531F"/>
+  <text x="187" y="91" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="white">6e ANNÉE • M3</text>
+  <g transform="translate(90 25)"><path d="M280 250 H500 Q510 300 510 520 H280 Z" fill="#B4531F"/><path d="M740 250 H520 Q510 300 510 520 H740 Z" fill="#B4531F" opacity=".72"/><rect x="270" y="520" width="480" height="26" rx="13" fill="#B4531F"/></g>
+  <text x="800" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#B4531F">MODULE 3</text>
+  <foreignObject x="655" y="280" width="485" height="150">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Arial,sans-serif;font-size:34px;line-height:1.18;font-weight:700;color:#B4531F;text-align:center;padding:8px">Accepter les autres</div>
+  </foreignObject>
+  <rect x="650" y="455" width="500" height="105" rx="24" fill="white" opacity=".92"/>
+  <foreignObject x="680" y="470" width="440" height="75">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Arial,sans-serif;font-size:23px;line-height:1.25;color:#263238;text-align:center">Leçon 4 • Production écrite - entraînement</div>
+  </foreignObject>
+  <text x="1125" y="640" text-anchor="end" font-family="Arial, sans-serif" font-size="18" fill="#B4531F">Illustration originale • fr-TN</text>
 </svg>
