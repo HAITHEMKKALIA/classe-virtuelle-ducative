@@ -1,9 +1,9 @@
 import { z } from "zod";
+import type { SupabaseClient } from "@supabase/supabase-js";
+import type { Database } from "@/integrations/supabase/types";
 
 type AuthContext = {
-  supabase: {
-    rpc: (fn: string, args: Record<string, unknown>) => Promise<{ data: unknown }>;
-  };
+  supabase: SupabaseClient<Database>;
   userId: string;
 };
 
