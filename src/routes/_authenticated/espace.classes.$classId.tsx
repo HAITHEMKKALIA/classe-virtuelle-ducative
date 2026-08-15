@@ -56,46 +56,10 @@ function ClassDetail() {
         .maybeSingle();
       setClasse(c ?? null);
       await loadMembers();
-      const { data: msgs } = await supabase
-        .from("class_messages")
-        .select("id, content, sender_id, created_at")
-        .eq("class_id", classId)
-        .order("created_at", { ascending: true })
-        .limit(200);
-      setMessages((msgs ?? []) as Message[]);
     })();
-
-    const channel = supabase
-      .channel(`class-${classId}`)
-      .on(
-        "postgres_changes",
-        {
-          event: "INSERT",
-          schema: "public",
-          table: "class_messages",
-          filter: `class_id=eq.${classId}`,
-        },
-        (payload) => setMessages((m) => [...m, payload.new as Message]),
-      )
-      .subscribe();
-    return () => {
-      void supabase.removeChannel(channel);
-    };
   }, [classId]);
 
-  useEffect(() => {
-    bottom.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
 
-  const envoyer = async () => {
-    if (!user || !text.trim()) return;
-    const content = text.trim();
-    setText("");
-    const { error } = await supabase
-      .from("class_messages")
-      .insert({ class_id: classId, sender_id: user.id, content });
-    if (error) toast.error(error.message);
-  };
 
   const decider = async (memberId: string, status: "approved" | "rejected") => {
     try {
