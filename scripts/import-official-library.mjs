@@ -141,13 +141,16 @@ for (const niveau of source.levels) {
       );
       for (const ex of l.exercises) {
         const { options, reponse } = normaliserReponse(ex);
+        const enonce = Array.isArray(ex.prompt)
+          ? ex.prompt.map((p) => (typeof p === "string" ? p : Object.values(p).join(" → "))).join(" | ")
+          : String(ex.prompt ?? "");
         const e = {
           id: ex.id,
           lesson_id: l.id,
           type: ex.type,
           points: Math.max(1, Number(ex.difficulty) || 1),
           consigne: ex.instruction,
-          enonce: ex.prompt,
+          enonce,
           competence: ex.competence,
           correction: ex.review_mode === "automatic" ? "auto" : "enseignant",
           feedback_ok: ex.feedback?.correct ?? "",

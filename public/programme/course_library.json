@@ -14721,12 +14721,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "école",
-        "propreté",
-        "jardin",
-        "arbres"
-      ],
+      "enonce": "école | propreté | jardin | arbres",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -14811,12 +14806,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -14926,12 +14916,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -15047,13 +15032,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "école",
-        "propreté",
-        "jardin",
-        "arbres",
-        "embellissement"
-      ],
+      "enonce": "école | propreté | jardin | arbres | embellissement",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -15139,13 +15118,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Récit cohérent",
-        "Chronologie",
-        "Lexique du thème",
-        "Types de phrases",
-        "Lisibilité et ponctuation"
-      ],
+      "enonce": "Récit cohérent | Chronologie | Lexique du thème | Types de phrases | Lisibilité et ponctuation",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -15220,12 +15193,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -15275,12 +15243,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "règles",
-        "politesse",
-        "partage",
-        "respect"
-      ],
+      "enonce": "règles | politesse | partage | respect",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -15365,12 +15328,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -15480,12 +15438,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -15601,13 +15554,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "règles",
-        "politesse",
-        "partage",
-        "respect",
-        "coopération"
-      ],
+      "enonce": "règles | politesse | partage | respect | coopération",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -15693,13 +15640,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Adéquation à la situation",
-        "Dialogue compréhensible",
-        "Respect des règles de vie",
-        "Négation correcte",
-        "Ponctuation du dialogue"
-      ],
+      "enonce": "Adéquation à la situation | Dialogue compréhensible | Respect des règles de vie | Négation correcte | Ponctuation du dialogue",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -15774,12 +15715,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -15829,12 +15765,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "entraide",
-        "handicap",
-        "personne âgée",
-        "solidarité"
-      ],
+      "enonce": "entraide | handicap | personne âgée | solidarité",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -15919,12 +15850,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -16034,12 +15960,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -16155,13 +16076,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "entraide",
-        "handicap",
-        "personne âgée",
-        "solidarité",
-        "respect"
-      ],
+      "enonce": "entraide | handicap | personne âgée | solidarité | respect",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -16247,13 +16162,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Valeur de solidarité",
-        "Organisation du récit",
-        "Personnages identifiables",
-        "Emploi des pronoms",
-        "Accords dans le groupe nominal"
-      ],
+      "enonce": "Valeur de solidarité | Organisation du récit | Personnages identifiables | Emploi des pronoms | Accords dans le groupe nominal",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -16328,12 +16237,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -16383,12 +16287,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "hygiène",
-        "aliments",
-        "sport",
-        "sommeil"
-      ],
+      "enonce": "hygiène | aliments | sport | sommeil",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -16473,12 +16372,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -16588,12 +16482,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -16709,13 +16598,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "hygiène",
-        "aliments",
-        "sport",
-        "sommeil",
-        "dentiste"
-      ],
+      "enonce": "hygiène | aliments | sport | sommeil | dentiste",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -16801,13 +16684,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Conseils pertinents",
-        "Organisation claire",
-        "Lexique de la santé",
-        "Impératif ou obligation",
-        "Accords nom-adjectif"
-      ],
+      "enonce": "Conseils pertinents | Organisation claire | Lexique de la santé | Impératif ou obligation | Accords nom-adjectif",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -16882,12 +16759,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -16937,12 +16809,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "métiers",
-        "outils",
-        "horaires",
-        "loisirs"
-      ],
+      "enonce": "métiers | outils | horaires | loisirs",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -17027,12 +16894,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -17142,12 +17004,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -17263,13 +17120,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "métiers",
-        "outils",
-        "horaires",
-        "loisirs",
-        "sport"
-      ],
+      "enonce": "métiers | outils | horaires | loisirs | sport",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -17355,13 +17206,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Chronologie",
-        "Équilibre travail-loisirs",
-        "Présent/futur",
-        "Déterminants",
-        "Cohérence des phrases"
-      ],
+      "enonce": "Chronologie | Équilibre travail-loisirs | Présent/futur | Déterminants | Cohérence des phrases",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -17436,12 +17281,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -17491,12 +17331,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "pays",
-        "capitales",
-        "monuments",
-        "voyage"
-      ],
+      "enonce": "pays | capitales | monuments | voyage",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -17581,12 +17416,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -17696,12 +17526,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -17817,13 +17642,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "pays",
-        "capitales",
-        "monuments",
-        "voyage",
-        "traditions"
-      ],
+      "enonce": "pays | capitales | monuments | voyage | traditions",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -17909,13 +17728,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Destinataire et formule finale",
-        "Informations géographiques",
-        "Description",
-        "Accords",
-        "Présentation du message"
-      ],
+      "enonce": "Destinataire et formule finale | Informations géographiques | Description | Accords | Présentation du message",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -17990,12 +17803,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -18045,12 +17853,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "projet",
-        "matériel",
-        "étapes",
-        "équipe"
-      ],
+      "enonce": "projet | matériel | étapes | équipe",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -18135,12 +17938,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -18250,12 +18048,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -18371,13 +18164,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "projet",
-        "matériel",
-        "étapes",
-        "équipe",
-        "responsabilité"
-      ],
+      "enonce": "projet | matériel | étapes | équipe | responsabilité",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -18463,13 +18250,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "But explicite",
-        "Étapes ordonnées",
-        "Consignes correctes",
-        "Répartition des rôles",
-        "Bilan du projet"
-      ],
+      "enonce": "But explicite | Étapes ordonnées | Consignes correctes | Répartition des rôles | Bilan du projet",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -18544,12 +18325,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -18599,12 +18375,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "écran",
-        "clavier",
-        "souris",
-        "fichier"
-      ],
+      "enonce": "écran | clavier | souris | fichier",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -18689,12 +18460,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -18804,12 +18570,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -18925,13 +18686,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "écran",
-        "clavier",
-        "souris",
-        "fichier",
-        "dossier"
-      ],
+      "enonce": "écran | clavier | souris | fichier | dossier",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -19017,13 +18772,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Étapes complètes",
-        "Verbes d'action",
-        "Sécurité numérique",
-        "Connecteurs chronologiques",
-        "Orthographe grammaticale"
-      ],
+      "enonce": "Étapes complètes | Verbes d'action | Sécurité numérique | Connecteurs chronologiques | Orthographe grammaticale",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -19098,12 +18847,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -19153,12 +18897,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "métiers",
-        "qualités professionnelles",
-        "effort",
-        "formation"
-      ],
+      "enonce": "métiers | qualités professionnelles | effort | formation",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -19243,12 +18982,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -19358,12 +19092,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -19479,13 +19208,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "métiers",
-        "qualités professionnelles",
-        "effort",
-        "formation",
-        "outils"
-      ],
+      "enonce": "métiers | qualités professionnelles | effort | formation | outils",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -19571,13 +19294,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Récit d'au moins 7 phrases au repère trimestriel",
-        "Chronologie",
-        "Justification",
-        "Temps verbaux",
-        "Vocabulaire précis"
-      ],
+      "enonce": "Récit d'au moins 7 phrases au repère trimestriel | Chronologie | Justification | Temps verbaux | Vocabulaire précis",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -19652,12 +19369,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -19707,12 +19419,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "conversation",
-        "téléphone",
-        "courriel",
-        "journal"
-      ],
+      "enonce": "conversation | téléphone | courriel | journal",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -19797,12 +19504,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -19912,12 +19614,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -20033,13 +19730,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "conversation",
-        "téléphone",
-        "courriel",
-        "journal",
-        "internet"
-      ],
+      "enonce": "conversation | téléphone | courriel | journal | internet",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -20125,13 +19816,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Destinataire identifié",
-        "Registre adapté",
-        "Répliques cohérentes",
-        "Opinion justifiée",
-        "Ponctuation"
-      ],
+      "enonce": "Destinataire identifié | Registre adapté | Répliques cohérentes | Opinion justifiée | Ponctuation",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -20206,12 +19891,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -20261,12 +19941,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "différence",
-        "tolérance",
-        "handicap",
-        "discrimination"
-      ],
+      "enonce": "différence | tolérance | handicap | discrimination",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -20351,12 +20026,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -20466,12 +20136,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -20587,13 +20252,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "différence",
-        "tolérance",
-        "handicap",
-        "discrimination",
-        "inclusion"
-      ],
+      "enonce": "différence | tolérance | handicap | discrimination | inclusion",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -20679,13 +20338,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Respect de la personne",
-        "Transformation de la situation",
-        "Arguments",
-        "Dialogue",
-        "Pronoms et accords"
-      ],
+      "enonce": "Respect de la personne | Transformation de la situation | Arguments | Dialogue | Pronoms et accords",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -20760,12 +20413,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -20815,12 +20463,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "solidarité",
-        "équipe",
-        "coopération",
-        "service"
-      ],
+      "enonce": "solidarité | équipe | coopération | service",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -20905,12 +20548,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -21020,12 +20658,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -21141,13 +20774,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "solidarité",
-        "équipe",
-        "coopération",
-        "service",
-        "répartition"
-      ],
+      "enonce": "solidarité | équipe | coopération | service | répartition",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -21233,13 +20860,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Problème et solution",
-        "Rôles complémentaires",
-        "Cause exprimée",
-        "Dialogue",
-        "Cohésion du texte"
-      ],
+      "enonce": "Problème et solution | Rôles complémentaires | Cause exprimée | Dialogue | Cohésion du texte",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -21314,12 +20935,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -21369,12 +20985,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "pollution",
-        "biodiversité",
-        "eau",
-        "forêt"
-      ],
+      "enonce": "pollution | biodiversité | eau | forêt",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -21459,12 +21070,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -21574,12 +21180,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -21695,13 +21296,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "pollution",
-        "biodiversité",
-        "eau",
-        "forêt",
-        "énergie"
-      ],
+      "enonce": "pollution | biodiversité | eau | forêt | énergie",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -21787,13 +21382,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Problème environnemental",
-        "Causes/conséquences",
-        "Description",
-        "Solution argumentée",
-        "Correction linguistique"
-      ],
+      "enonce": "Problème environnemental | Causes/conséquences | Description | Solution argumentée | Correction linguistique",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -21868,12 +21457,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -21923,12 +21507,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "alimentation",
-        "activité physique",
-        "repos",
-        "soins"
-      ],
+      "enonce": "alimentation | activité physique | repos | soins",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -22013,12 +21592,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -22128,12 +21702,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -22249,13 +21818,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "alimentation",
-        "activité physique",
-        "repos",
-        "soins",
-        "prévention"
-      ],
+      "enonce": "alimentation | activité physique | repos | soins | prévention",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -22341,13 +21904,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Récit d'au moins 8 phrases au repère trimestriel",
-        "Description",
-        "Conseils",
-        "Négation",
-        "Accords"
-      ],
+      "enonce": "Récit d'au moins 8 phrases au repère trimestriel | Description | Conseils | Négation | Accords",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -22422,12 +21979,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -22477,12 +22029,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "lecture",
-        "musique",
-        "sport",
-        "collection"
-      ],
+      "enonce": "lecture | musique | sport | collection",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -22567,12 +22114,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -22682,12 +22224,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -22803,13 +22340,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "lecture",
-        "musique",
-        "sport",
-        "collection",
-        "sortie"
-      ],
+      "enonce": "lecture | musique | sport | collection | sortie",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -22895,13 +22426,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Codes de la lettre",
-        "Récit personnel",
-        "Sentiments",
-        "Compléments de temps",
-        "Formules d'adresse et de clôture"
-      ],
+      "enonce": "Codes de la lettre | Récit personnel | Sentiments | Compléments de temps | Formules d'adresse et de clôture",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -22976,12 +22501,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -23031,12 +22551,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe chaque mot à une définition préparée par le professeur.",
-      "enonce": [
-        "habitat",
-        "vêtements",
-        "repas",
-        "fêtes"
-      ],
+      "enonce": "habitat | vêtements | repas | fêtes",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -23121,12 +22636,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Remets les étapes dans l'ordre.",
-      "enonce": [
-        "Observation du problème",
-        "Proposition",
-        "Action collective",
-        "Résultat"
-      ],
+      "enonce": "Observation du problème | Proposition | Action collective | Résultat",
       "competence": "reading",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -23236,12 +22746,7 @@
       "type": "ordering",
       "points": 2,
       "consigne": "Classe les parties du texte.",
-      "enonce": [
-        "Début",
-        "Événement",
-        "Actions",
-        "Fin"
-      ],
+      "enonce": "Début | Événement | Actions | Fin",
       "competence": "writing",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -23357,13 +22862,7 @@
       "type": "matching",
       "points": 2,
       "consigne": "Associe les mots et leurs explications.",
-      "enonce": [
-        "habitat",
-        "vêtements",
-        "repas",
-        "fêtes",
-        "école"
-      ],
+      "enonce": "habitat | vêtements | repas | fêtes | école",
       "competence": "vocabulary",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -23449,13 +22948,7 @@
       "type": "self_assessment",
       "points": 2,
       "consigne": "Indique ton niveau pour chaque critère.",
-      "enonce": [
-        "Production d'au moins 10 phrases au repère terminal",
-        "Description",
-        "Comparaison respectueuse",
-        "Substituts",
-        "Cohérence et correction"
-      ],
+      "enonce": "Production d'au moins 10 phrases au repère terminal | Description | Comparaison respectueuse | Substituts | Cohérence et correction",
       "competence": "integration",
       "correction": "enseignant",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",
@@ -23530,12 +23023,7 @@
       "type": "error_classification",
       "points": 2,
       "consigne": "Classe chaque erreur dans le bon domaine.",
-      "enonce": [
-        "grammaire",
-        "conjugaison",
-        "orthographe",
-        "vocabulaire"
-      ],
+      "enonce": "grammaire | conjugaison | orthographe | vocabulaire",
       "competence": "remediation",
       "correction": "auto",
       "feedback_ok": "Bravo. La compétence est mobilisée correctement.",

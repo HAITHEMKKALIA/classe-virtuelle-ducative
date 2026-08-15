@@ -81,7 +81,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -149,7 +149,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. école,propreté,jardin,arbres,embellissement",
+          "enonce": "Associe les mots et leurs explications. école | propreté | jardin | arbres | embellissement",
           "options": [
             "école → Sens de école dans le module",
             "propreté → Sens de propreté dans le module",
@@ -238,7 +238,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -306,7 +306,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. règles,politesse,partage,respect,coopération",
+          "enonce": "Associe les mots et leurs explications. règles | politesse | partage | respect | coopération",
           "options": [
             "règles → Sens de règles dans le module",
             "politesse → Sens de politesse dans le module",
@@ -395,7 +395,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -463,7 +463,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. entraide,handicap,personne âgée,solidarité,respect",
+          "enonce": "Associe les mots et leurs explications. entraide | handicap | personne âgée | solidarité | respect",
           "options": [
             "entraide → Sens de entraide dans le module",
             "handicap → Sens de handicap dans le module",
@@ -552,7 +552,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -620,7 +620,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. hygiène,aliments,sport,sommeil,dentiste",
+          "enonce": "Associe les mots et leurs explications. hygiène | aliments | sport | sommeil | dentiste",
           "options": [
             "hygiène → Sens de hygiène dans le module",
             "aliments → Sens de aliments dans le module",
@@ -709,7 +709,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -777,7 +777,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. métiers,outils,horaires,loisirs,sport",
+          "enonce": "Associe les mots et leurs explications. métiers | outils | horaires | loisirs | sport",
           "options": [
             "métiers → Sens de métiers dans le module",
             "outils → Sens de outils dans le module",
@@ -866,7 +866,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -934,7 +934,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. pays,capitales,monuments,voyage,traditions",
+          "enonce": "Associe les mots et leurs explications. pays | capitales | monuments | voyage | traditions",
           "options": [
             "pays → Sens de pays dans le module",
             "capitales → Sens de capitales dans le module",
@@ -1023,7 +1023,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -1091,7 +1091,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. projet,matériel,étapes,équipe,responsabilité",
+          "enonce": "Associe les mots et leurs explications. projet | matériel | étapes | équipe | responsabilité",
           "options": [
             "projet → Sens de projet dans le module",
             "matériel → Sens de matériel dans le module",
@@ -1180,7 +1180,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -1248,7 +1248,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. écran,clavier,souris,fichier,dossier",
+          "enonce": "Associe les mots et leurs explications. écran | clavier | souris | fichier | dossier",
           "options": [
             "écran → Sens de écran dans le module",
             "clavier → Sens de clavier dans le module",
@@ -1326,7 +1326,7 @@
         {
           "ordre": 3,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -1409,7 +1409,7 @@
         {
           "ordre": 11,
           "type": "qcm",
-          "enonce": "Classe chaque erreur dans le bon domaine. grammaire,conjugaison,orthographe,vocabulaire",
+          "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
           "points": 2,
@@ -1418,7 +1418,7 @@
         {
           "ordre": 12,
           "type": "court",
-          "enonce": "Associe chaque mot à une définition préparée par le professeur. règles,politesse,partage,respect",
+          "enonce": "Associe chaque mot à une définition préparée par le professeur. règles | politesse | partage | respect",
           "options": [
             "règles → Définition contextualisée de règles",
             "politesse → Définition contextualisée de politesse",
@@ -1464,7 +1464,7 @@
         {
           "ordre": 16,
           "type": "court",
-          "enonce": "Classe les parties du texte. Début,Événement,Actions,Fin",
+          "enonce": "Classe les parties du texte. Début | Événement | Actions | Fin",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -1545,7 +1545,7 @@
         {
           "ordre": 3,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -1628,7 +1628,7 @@
         {
           "ordre": 11,
           "type": "qcm",
-          "enonce": "Classe chaque erreur dans le bon domaine. grammaire,conjugaison,orthographe,vocabulaire",
+          "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
           "points": 2,
@@ -1637,7 +1637,7 @@
         {
           "ordre": 12,
           "type": "court",
-          "enonce": "Associe chaque mot à une définition préparée par le professeur. hygiène,aliments,sport,sommeil",
+          "enonce": "Associe chaque mot à une définition préparée par le professeur. hygiène | aliments | sport | sommeil",
           "options": [
             "hygiène → Définition contextualisée de hygiène",
             "aliments → Définition contextualisée de aliments",
@@ -1683,7 +1683,7 @@
         {
           "ordre": 16,
           "type": "court",
-          "enonce": "Classe les parties du texte. Début,Événement,Actions,Fin",
+          "enonce": "Classe les parties du texte. Début | Événement | Actions | Fin",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -1764,7 +1764,7 @@
         {
           "ordre": 3,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -1847,7 +1847,7 @@
         {
           "ordre": 11,
           "type": "qcm",
-          "enonce": "Classe chaque erreur dans le bon domaine. grammaire,conjugaison,orthographe,vocabulaire",
+          "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
           "points": 2,
@@ -1856,7 +1856,7 @@
         {
           "ordre": 12,
           "type": "court",
-          "enonce": "Associe chaque mot à une définition préparée par le professeur. pays,capitales,monuments,voyage",
+          "enonce": "Associe chaque mot à une définition préparée par le professeur. pays | capitales | monuments | voyage",
           "options": [
             "pays → Définition contextualisée de pays",
             "capitales → Définition contextualisée de capitales",
@@ -1902,7 +1902,7 @@
         {
           "ordre": 16,
           "type": "court",
-          "enonce": "Classe les parties du texte. Début,Événement,Actions,Fin",
+          "enonce": "Classe les parties du texte. Début | Événement | Actions | Fin",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -1983,7 +1983,7 @@
         {
           "ordre": 3,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -2066,7 +2066,7 @@
         {
           "ordre": 11,
           "type": "qcm",
-          "enonce": "Classe chaque erreur dans le bon domaine. grammaire,conjugaison,orthographe,vocabulaire",
+          "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
           "points": 2,
@@ -2075,7 +2075,7 @@
         {
           "ordre": 12,
           "type": "court",
-          "enonce": "Associe chaque mot à une définition préparée par le professeur. écran,clavier,souris,fichier",
+          "enonce": "Associe chaque mot à une définition préparée par le professeur. écran | clavier | souris | fichier",
           "options": [
             "écran → Définition contextualisée de écran",
             "clavier → Définition contextualisée de clavier",
@@ -2121,7 +2121,7 @@
         {
           "ordre": 16,
           "type": "court",
-          "enonce": "Classe les parties du texte. Début,Événement,Actions,Fin",
+          "enonce": "Classe les parties du texte. Début | Événement | Actions | Fin",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -2237,7 +2237,7 @@
         {
           "ordre": 6,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. école,propreté,jardin,arbres,embellissement",
+          "enonce": "Associe les mots et leurs explications. école | propreté | jardin | arbres | embellissement",
           "options": [
             "école → Sens de école dans le module",
             "propreté → Sens de propreté dans le module",
@@ -2330,7 +2330,7 @@
         {
           "ordre": 14,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. règles,politesse,partage,respect,coopération",
+          "enonce": "Associe les mots et leurs explications. règles | politesse | partage | respect | coopération",
           "options": [
             "règles → Sens de règles dans le module",
             "politesse → Sens de politesse dans le module",
@@ -2423,7 +2423,7 @@
         {
           "ordre": 22,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. entraide,handicap,personne âgée,solidarité,respect",
+          "enonce": "Associe les mots et leurs explications. entraide | handicap | personne âgée | solidarité | respect",
           "options": [
             "entraide → Sens de entraide dans le module",
             "handicap → Sens de handicap dans le module",
@@ -2545,7 +2545,7 @@
         {
           "ordre": 6,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. hygiène,aliments,sport,sommeil,dentiste",
+          "enonce": "Associe les mots et leurs explications. hygiène | aliments | sport | sommeil | dentiste",
           "options": [
             "hygiène → Sens de hygiène dans le module",
             "aliments → Sens de aliments dans le module",
@@ -2638,7 +2638,7 @@
         {
           "ordre": 14,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. métiers,outils,horaires,loisirs,sport",
+          "enonce": "Associe les mots et leurs explications. métiers | outils | horaires | loisirs | sport",
           "options": [
             "métiers → Sens de métiers dans le module",
             "outils → Sens de outils dans le module",
@@ -2731,7 +2731,7 @@
         {
           "ordre": 22,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. pays,capitales,monuments,voyage,traditions",
+          "enonce": "Associe les mots et leurs explications. pays | capitales | monuments | voyage | traditions",
           "options": [
             "pays → Sens de pays dans le module",
             "capitales → Sens de capitales dans le module",
@@ -2831,7 +2831,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -2899,7 +2899,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. projet,matériel,étapes,équipe,responsabilité",
+          "enonce": "Associe les mots et leurs explications. projet | matériel | étapes | équipe | responsabilité",
           "options": [
             "projet → Sens de projet dans le module",
             "matériel → Sens de matériel dans le module",
@@ -2950,7 +2950,7 @@
         {
           "ordre": 16,
           "type": "qcm",
-          "enonce": "Classe chaque erreur dans le bon domaine. grammaire,conjugaison,orthographe,vocabulaire",
+          "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
           "points": 2,
@@ -2996,7 +2996,7 @@
         {
           "ordre": 20,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -3505,7 +3505,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -3573,7 +3573,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. métiers,qualités professionnelles,effort,formation,outils",
+          "enonce": "Associe les mots et leurs explications. métiers | qualités professionnelles | effort | formation | outils",
           "options": [
             "métiers → Sens de métiers dans le module",
             "qualités professionnelles → Sens de qualités professionnelles dans le module",
@@ -3662,7 +3662,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -3730,7 +3730,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. conversation,téléphone,courriel,journal,internet",
+          "enonce": "Associe les mots et leurs explications. conversation | téléphone | courriel | journal | internet",
           "options": [
             "conversation → Sens de conversation dans le module",
             "téléphone → Sens de téléphone dans le module",
@@ -3819,7 +3819,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -3887,7 +3887,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. différence,tolérance,handicap,discrimination,inclusion",
+          "enonce": "Associe les mots et leurs explications. différence | tolérance | handicap | discrimination | inclusion",
           "options": [
             "différence → Sens de différence dans le module",
             "tolérance → Sens de tolérance dans le module",
@@ -3976,7 +3976,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -4044,7 +4044,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. solidarité,équipe,coopération,service,répartition",
+          "enonce": "Associe les mots et leurs explications. solidarité | équipe | coopération | service | répartition",
           "options": [
             "solidarité → Sens de solidarité dans le module",
             "équipe → Sens de équipe dans le module",
@@ -4133,7 +4133,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -4201,7 +4201,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. pollution,biodiversité,eau,forêt,énergie",
+          "enonce": "Associe les mots et leurs explications. pollution | biodiversité | eau | forêt | énergie",
           "options": [
             "pollution → Sens de pollution dans le module",
             "biodiversité → Sens de biodiversité dans le module",
@@ -4290,7 +4290,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -4358,7 +4358,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. alimentation,activité physique,repos,soins,prévention",
+          "enonce": "Associe les mots et leurs explications. alimentation | activité physique | repos | soins | prévention",
           "options": [
             "alimentation → Sens de alimentation dans le module",
             "activité physique → Sens de activité physique dans le module",
@@ -4447,7 +4447,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -4515,7 +4515,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. lecture,musique,sport,collection,sortie",
+          "enonce": "Associe les mots et leurs explications. lecture | musique | sport | collection | sortie",
           "options": [
             "lecture → Sens de lecture dans le module",
             "musique → Sens de musique dans le module",
@@ -4604,7 +4604,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -4672,7 +4672,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. habitat,vêtements,repas,fêtes,école",
+          "enonce": "Associe les mots et leurs explications. habitat | vêtements | repas | fêtes | école",
           "options": [
             "habitat → Sens de habitat dans le module",
             "vêtements → Sens de vêtements dans le module",
@@ -4750,7 +4750,7 @@
         {
           "ordre": 3,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -4833,7 +4833,7 @@
         {
           "ordre": 11,
           "type": "qcm",
-          "enonce": "Classe chaque erreur dans le bon domaine. grammaire,conjugaison,orthographe,vocabulaire",
+          "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
           "points": 2,
@@ -4842,7 +4842,7 @@
         {
           "ordre": 12,
           "type": "court",
-          "enonce": "Associe chaque mot à une définition préparée par le professeur. conversation,téléphone,courriel,journal",
+          "enonce": "Associe chaque mot à une définition préparée par le professeur. conversation | téléphone | courriel | journal",
           "options": [
             "conversation → Définition contextualisée de conversation",
             "téléphone → Définition contextualisée de téléphone",
@@ -4888,7 +4888,7 @@
         {
           "ordre": 16,
           "type": "court",
-          "enonce": "Classe les parties du texte. Début,Événement,Actions,Fin",
+          "enonce": "Classe les parties du texte. Début | Événement | Actions | Fin",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -4969,7 +4969,7 @@
         {
           "ordre": 3,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -5052,7 +5052,7 @@
         {
           "ordre": 11,
           "type": "qcm",
-          "enonce": "Classe chaque erreur dans le bon domaine. grammaire,conjugaison,orthographe,vocabulaire",
+          "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
           "points": 2,
@@ -5061,7 +5061,7 @@
         {
           "ordre": 12,
           "type": "court",
-          "enonce": "Associe chaque mot à une définition préparée par le professeur. solidarité,équipe,coopération,service",
+          "enonce": "Associe chaque mot à une définition préparée par le professeur. solidarité | équipe | coopération | service",
           "options": [
             "solidarité → Définition contextualisée de solidarité",
             "équipe → Définition contextualisée de équipe",
@@ -5107,7 +5107,7 @@
         {
           "ordre": 16,
           "type": "court",
-          "enonce": "Classe les parties du texte. Début,Événement,Actions,Fin",
+          "enonce": "Classe les parties du texte. Début | Événement | Actions | Fin",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -5188,7 +5188,7 @@
         {
           "ordre": 3,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -5271,7 +5271,7 @@
         {
           "ordre": 11,
           "type": "qcm",
-          "enonce": "Classe chaque erreur dans le bon domaine. grammaire,conjugaison,orthographe,vocabulaire",
+          "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
           "points": 2,
@@ -5280,7 +5280,7 @@
         {
           "ordre": 12,
           "type": "court",
-          "enonce": "Associe chaque mot à une définition préparée par le professeur. alimentation,activité physique,repos,soins",
+          "enonce": "Associe chaque mot à une définition préparée par le professeur. alimentation | activité physique | repos | soins",
           "options": [
             "alimentation → Définition contextualisée de alimentation",
             "activité physique → Définition contextualisée de activité physique",
@@ -5326,7 +5326,7 @@
         {
           "ordre": 16,
           "type": "court",
-          "enonce": "Classe les parties du texte. Début,Événement,Actions,Fin",
+          "enonce": "Classe les parties du texte. Début | Événement | Actions | Fin",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -5407,7 +5407,7 @@
         {
           "ordre": 3,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -5490,7 +5490,7 @@
         {
           "ordre": 11,
           "type": "qcm",
-          "enonce": "Classe chaque erreur dans le bon domaine. grammaire,conjugaison,orthographe,vocabulaire",
+          "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
           "points": 2,
@@ -5499,7 +5499,7 @@
         {
           "ordre": 12,
           "type": "court",
-          "enonce": "Associe chaque mot à une définition préparée par le professeur. habitat,vêtements,repas,fêtes",
+          "enonce": "Associe chaque mot à une définition préparée par le professeur. habitat | vêtements | repas | fêtes",
           "options": [
             "habitat → Définition contextualisée de habitat",
             "vêtements → Définition contextualisée de vêtements",
@@ -5545,7 +5545,7 @@
         {
           "ordre": 16,
           "type": "court",
-          "enonce": "Classe les parties du texte. Début,Événement,Actions,Fin",
+          "enonce": "Classe les parties du texte. Début | Événement | Actions | Fin",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -5661,7 +5661,7 @@
         {
           "ordre": 6,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. métiers,qualités professionnelles,effort,formation,outils",
+          "enonce": "Associe les mots et leurs explications. métiers | qualités professionnelles | effort | formation | outils",
           "options": [
             "métiers → Sens de métiers dans le module",
             "qualités professionnelles → Sens de qualités professionnelles dans le module",
@@ -5754,7 +5754,7 @@
         {
           "ordre": 14,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. conversation,téléphone,courriel,journal,internet",
+          "enonce": "Associe les mots et leurs explications. conversation | téléphone | courriel | journal | internet",
           "options": [
             "conversation → Sens de conversation dans le module",
             "téléphone → Sens de téléphone dans le module",
@@ -5847,7 +5847,7 @@
         {
           "ordre": 22,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. différence,tolérance,handicap,discrimination,inclusion",
+          "enonce": "Associe les mots et leurs explications. différence | tolérance | handicap | discrimination | inclusion",
           "options": [
             "différence → Sens de différence dans le module",
             "tolérance → Sens de tolérance dans le module",
@@ -5969,7 +5969,7 @@
         {
           "ordre": 6,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. solidarité,équipe,coopération,service,répartition",
+          "enonce": "Associe les mots et leurs explications. solidarité | équipe | coopération | service | répartition",
           "options": [
             "solidarité → Sens de solidarité dans le module",
             "équipe → Sens de équipe dans le module",
@@ -6062,7 +6062,7 @@
         {
           "ordre": 14,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. pollution,biodiversité,eau,forêt,énergie",
+          "enonce": "Associe les mots et leurs explications. pollution | biodiversité | eau | forêt | énergie",
           "options": [
             "pollution → Sens de pollution dans le module",
             "biodiversité → Sens de biodiversité dans le module",
@@ -6155,7 +6155,7 @@
         {
           "ordre": 22,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. alimentation,activité physique,repos,soins,prévention",
+          "enonce": "Associe les mots et leurs explications. alimentation | activité physique | repos | soins | prévention",
           "options": [
             "alimentation → Sens de alimentation dans le module",
             "activité physique → Sens de activité physique dans le module",
@@ -6255,7 +6255,7 @@
         {
           "ordre": 4,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
@@ -6323,7 +6323,7 @@
         {
           "ordre": 11,
           "type": "court",
-          "enonce": "Associe les mots et leurs explications. lecture,musique,sport,collection,sortie",
+          "enonce": "Associe les mots et leurs explications. lecture | musique | sport | collection | sortie",
           "options": [
             "lecture → Sens de lecture dans le module",
             "musique → Sens de musique dans le module",
@@ -6374,7 +6374,7 @@
         {
           "ordre": 16,
           "type": "qcm",
-          "enonce": "Classe chaque erreur dans le bon domaine. grammaire,conjugaison,orthographe,vocabulaire",
+          "enonce": "Classe chaque erreur dans le bon domaine. grammaire | conjugaison | orthographe | vocabulaire",
           "options": [],
           "reponse_correcte": null,
           "points": 2,
@@ -6420,7 +6420,7 @@
         {
           "ordre": 20,
           "type": "court",
-          "enonce": "Remets les étapes dans l'ordre. Observation du problème,Proposition,Action collective,Résultat",
+          "enonce": "Remets les étapes dans l'ordre. Observation du problème | Proposition | Action collective | Résultat",
           "options": [],
           "reponse_correcte": "0 → 1 → 2 → 3",
           "points": 2,
