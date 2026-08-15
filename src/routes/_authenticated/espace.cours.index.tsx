@@ -318,7 +318,32 @@ function CoursPage() {
                       )}
                     </AccordionTrigger>
                     <AccordionContent>
+                      {(() => {
+                        const detail = findModuleDetail(Number(niveau), module.module_no);
+                        if (!detail) return null;
+                        return (
+                          <div className="mb-4 rounded-lg border border-border bg-muted/40 p-4">
+                            <p className="mb-3 font-display text-sm font-semibold">Contenus indispensables</p>
+                            <dl className="grid gap-3 sm:grid-cols-2">
+                              {Object.entries(detail.domains).map(([domaine, items]) => (
+                                <div key={domaine}>
+                                  <dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                                    {domaine}
+                                  </dt>
+                                  <dd className="mt-1 text-sm">{items.join(" • ")}</dd>
+                                </div>
+                              ))}
+                            </dl>
+                            {detail.supports.length > 0 && (
+                              <p className="mt-3 text-xs text-muted-foreground">
+                                Supports suggérés : {detail.supports.join(" · ")}
+                              </p>
+                            )}
+                          </div>
+                        );
+                      })()}
                       <div className="divide-y divide-border border-t border-border">
+
                         {lessons.map((lesson) => {
                           const suivi = suivis.find((item) => item.lesson_id === lesson.id);
                           const done = suivi?.status === "completed";
