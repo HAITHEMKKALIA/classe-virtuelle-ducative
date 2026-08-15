@@ -157,7 +157,7 @@ function Salle({ titre }: { titre: string }) {
       {/* Plafond */}
       <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, H, 0]}>
         <planeGeometry args={[L, P]} />
-        <meshStandardMaterial color="#ffffff" roughness={1} side={THREE.DoubleSide} />
+        <meshStandardMaterial color="#ffffff" roughness={1} />
       </mesh>
       {/* Néons */}
       {[-2.5, 2.5].map((z) => (
@@ -169,19 +169,19 @@ function Salle({ titre }: { titre: string }) {
       {/* 4 murs */}
       <mesh position={[0, H / 2, -P / 2]} receiveShadow>
         <planeGeometry args={[L, H]} />
-        <meshStandardMaterial color="#f4efe4" roughness={1} side={THREE.DoubleSide} />
+        <meshStandardMaterial color="#f4efe4" roughness={1} />
       </mesh>
       <mesh position={[0, H / 2, P / 2]} rotation={[0, Math.PI, 0]} receiveShadow>
         <planeGeometry args={[L, H]} />
-        <meshStandardMaterial color="#eee8dc" roughness={1} side={THREE.DoubleSide} />
+        <meshStandardMaterial color="#eee8dc" roughness={1} />
       </mesh>
       <mesh position={[-L / 2, H / 2, 0]} rotation={[0, Math.PI / 2, 0]} receiveShadow>
         <planeGeometry args={[P, H]} />
-        <meshStandardMaterial color="#efe9dd" roughness={1} side={THREE.DoubleSide} />
+        <meshStandardMaterial color="#efe9dd" roughness={1} />
       </mesh>
       <mesh position={[L / 2, H / 2, 0]} rotation={[0, -Math.PI / 2, 0]} receiveShadow>
         <planeGeometry args={[P, H]} />
-        <meshStandardMaterial color="#efe9dd" roughness={1} side={THREE.DoubleSide} />
+        <meshStandardMaterial color="#efe9dd" roughness={1} />
       </mesh>
       {/* Fenêtres sur le mur latéral droit */}
       {[-2.5, 1.5].map((z) => (
