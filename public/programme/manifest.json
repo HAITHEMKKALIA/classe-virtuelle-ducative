@@ -1,0 +1,15 @@
+{
+  "nom": "Ma Classe de Français TN — bibliothèque originale",
+  "version": "1.0.0",
+  "licence": "Contenu original. Aucun extrait de manuel protégé du CNP n'est reproduit.",
+  "avertissement": "Contenu généré pour la préparation des séances : une validation humaine par l'enseignant est obligatoire avant publication aux élèves.",
+  "niveaux": 2,
+  "trimestres": 3,
+  "modules": 16,
+  "lecons": 128,
+  "textes": 64,
+  "dictees": 32,
+  "exercices": 512,
+  "illustrations": 128,
+  "evaluations": 32
+}

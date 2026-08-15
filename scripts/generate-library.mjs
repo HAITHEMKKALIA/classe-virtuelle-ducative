@@ -8,7 +8,7 @@ import { MODULE_DETAILS } from "../src/lib/module-details.ts";
 const OUT = new URL("../public/programme/", import.meta.url).pathname;
 const ILLU = `${OUT}assets/illustrations/`;
 
-rmSync(OUT, { recursive: true, force: true });
+rmSync(OUT.replace(/\/$/, ""), { recursive: true, force: true });
 mkdirSync(ILLU, { recursive: true });
 
 const TRIMESTRE = { 1: 1, 2: 1, 3: 1, 4: 2, 5: 2, 6: 2, 7: 3, 8: 3 };
