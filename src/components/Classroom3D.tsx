@@ -8,7 +8,6 @@ import {
   RoundedBox,
 } from "@react-three/drei";
 import * as THREE from "three";
-import { useTexture } from "@react-three/drei";
 import { Button } from "@/components/ui/button";
 import type { Participant } from "@/components/ClassroomStage";
 
